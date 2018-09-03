@@ -1,0 +1,19 @@
+//local
+//export const PATH_SITE = 'http://localhost/chia/chiaApi/'
+
+//Devserver
+export const PATH_SITE = 'http://appchia.optimatm.com/cake/'
+
+export const FETCH_DATA_CAROUSEL = 'FETCH_DATA_CAROUSEL'
+export const FETCH_DATA_CATEGORIES = 'FETCH_DATA_CATEGORIES'
+export const FETCH_DATA_PRODUCT = 'FETCH_DATA_PRODUCT'
+export const FETCH_DATA_PRODUCTS = 'FETCH_DATA_PRODUCTS'
+export const FETCH_DATA_CATEGORY = 'FETCH_DATA_CATEGORY'
+export const FETCH_DATA_ITEM = 'FETCH_DATA_ITEM'
+export const FETCH_DATA_COCKTAILS = 'FETCH_DATA_COCKTAILS'
+export const FETCH_DATA_COCKTAIL = 'FETCH_DATA_COCKTAIL'
+export const FETCH_DATA_DEALER = 'FETCH_DATA_DEALER'
+export const FETCH_DATA_DEPARTMENT = 'FETCH_DATA_DEPARTMENT'
+export const SEND_DATA = 'SEND_DATA'
+export const FETCH_DATA_TYPES = 'FETCH_DATA_TYPES'
+export const FETCH_DATA_ACTIVITIES = 'FETCH_DATA_ACTIVITIES'

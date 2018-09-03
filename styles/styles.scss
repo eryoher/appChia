@@ -3,192 +3,400 @@
 @import 'functions';
 
 body{    
-    #CasaDelRhin{
-        max-width: $width-page;
-        padding-left: 0px;
-        padding-right: 0px;
-        .content-body{
-            min-height: 800px;
-        }
-        .header-container{
-            min-height: 128px;
-            background-color: #b90b25ff;
-            padding-right: 10%;
-            padding-left: 10%;
-            @include breakpoint(max-width 1166px) {
-                padding-right: 5%;
-                padding-left: 5%;
-            }
+    #chiaUI{         
+        width: 100%;
+        a{
+            text-decoration: none;
+            &:hover{
+                text-decoration: none;
 
-            .navbar-brand {
-                @include breakpoint(max-width 360px) {
+            }
+        }
+        .products-container{
+            
+            .popup-video{
+                //border: solid 1px red;
+                width: 93%;
+                height: 100%;
+                position: absolute;
+                top: 0px;
+                left: 3.5%;
+                background-color: #000000bf;
+                .reproductor{
+                    height: 100%;
                     width: 50%;
-                }
-
-                .logo-header{
-                    @include breakpoint(max-width 360px) {
-                        width: 125%;
-                    }
-                }
-
-            }
-            .menu{                                
-                @include BebasNBold(15pt);
-                vertical-align: middle;
-                color: #fff;
-                margin-left: 10px;
-                margin-right: 10px;       
-                @include breakpoint(max-width 767px) {
-                    
-                }                
-                       
-            }
-            .social-media{
-                margin-left: 5%;
-                border-left: solid 2px #fff;
-                padding-left: 2%;
-                @include breakpoint(max-width 1000px) {
-                    border: 0px;
-                    padding-left: 0px;
-                }
-                .icon {
-                    background-repeat: no-repeat;
-                    background-position: left;
-                    background-size: 20px;
-                    display: inline-block;
-                    margin: 5px;
-                    width: 20px;
-                    height: 20px;
-                }
-            }  
-        }
-        .homepage-container{
-            .presentation-mode{
-                .conten-slide{
-                    .my-slide-content{
-                        background-repeat: no-repeat;
-                        background-size: cover;
-                        min-height: $height-content-page;   
-                        width: 100%;
-                        .slogan-content{
-                            height: 100%;
-                            .slogan{
-                                .title{
-                                    padding-left: 15px;
-                                }
-                                border: solid 3px white;
-                                border-bottom: 0px;
-                                background-color: #00000021;
-                                @include BebasNBold(72pt);
-                                color: #fff;                                
-                                padding-right: 15px;
-                                margin-top: 47%;
-                                @include breakpoint($min-page-width-md) {
-                                    @include BebasNBold(42pt);
-                                    margin-top: 80%;
-                                }
-                                .bottom-slogan {
-                                    font-size: 9pt;
-                                    border-bottom: 3px solid #fff;                                                                        
-                                }
-                            }
-                        }
-                        
-                    }
+                    margin: 0px auto;
+                    @include breakpoint( max-width 560px ) {
+                        width: 80%;
+                    } 
                 }    
-            }                         
-
-        }
-        .nosotros-container{
-            background-image: url('../img/background_content.png');
-            background-repeat: repeat;
-            min-height: $height-content-page;
-            .nosotros-fundacion{
-                width: auto;
-                min-height: 300px; 
-                margin-top: 33%; 
-                @include breakpoint($min-page-width-md) {
-                    margin-top: 10%; 
-                }
-
-                @include backgroundImage();
-                .year{
-                    margin-top:38%;
-                    height: 100%;
-                    @include BebasNRegular(20pt);
-                    color: #fff;
-                }
-
             }
-            .history{
-                @include RobotoLight(15pt);
-                .italic{
-                    @include RobotoLightItalic(15pt);
 
-                }
-            }
-            .btn-rhin{
-                background-color: #b90b25ff;
-                color: #fff;
-                @include BebasNBold(18pt);
-                padding-left: 25px;
-                padding-right: 25px;
-            }
-            .menu-productos{
-                @include backgroundImage();
-                width: 100%;
-                height: 661px; 
-                padding: 18px;
-                margin-top: 10%;                
-                @include breakpoint($min-page-width-md) {
-                    height: 400px; 
-
-                }
-                .content-product{
-                    height: 100%;
-                    border: solid 1px white;
-                    overflow: auto;
-                    .item-product{
-                        display: block;
-                        border: solid 1px #b90b25ff;
-                        color: #fff;
-                        background-color: #b90b25ff;
-                        @include BebasNBold(25pt);
-                        padding-left: 15px;
-                        padding-right: 15px;
-                        padding-top: 10px;
+            .header{
+                background-image: url('../img/header_home.png');
+                background-size: contain;
+                background-repeat: no-repeat;
+                height: 250px;
+                background-position-x: 50%;
+                @include breakpoint( max-width 360px ) {
+                    height: 150px;
                     
+                }  
+
+            }
+            .footer{
+                background-image: url('../img/footer_home.png');
+                background-size: contain;
+                background-repeat: no-repeat;
+                height: 250px;
+                background-position-x: 50%;
+                @include breakpoint( max-width 360px ) {
+                    height: 150px;
+                    
+                }  
+            }
+            
+            background-image: url('../img/bg_home.png');
+            @include backgroundImage();
+            .category-list{
+                width: 100%;
+                min-height: 500px;
+                .product-list{
+                    padding-left: 10%;  
+                    .product{
+                        @include FuturaStdBold(16pt);                    
+                        background-image: url('../img/orng_1.png');
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        height: 260px;
+                        width: 260px;
+                        text-align: center;
+                        padding-top: 25%;
+                        margin: 20px;
+                        color: #fff;         
+                        @include breakpoint( max-width 991px ) {
+                            padding-top: 40%;
+                        }               
                     }
                 }
             }
         }
 
-        .footer-container{
-            min-height: $height-footer-page;
-            line-height: 0.2;
-            @include breakpoint($min-page-width-md) {
-                text-align: center !important;
+        .product-container{
+            background-image: url('../img/bg_inter.png');
+            @include backgroundImage();
+            height: 100%;
+            @include breakpoint( max-width 500px ) {
+                height: 100%;
+            }           
+            .title{
+                @include FuturaStdBold(51pt);
+                color: #439b51ff;                         
+                .title-product{
+                    text-align: right;
+                    color: #c0c0c0ff;  
+                    padding-right: 5%;
+                } 
+                
+                @include breakpoint( $min-page-width-md ) {
+                    @include FuturaStdBold(35pt);                        
+                } 
+                @include breakpoint( max-width 500px ) {
+                    @include FuturaStdBold(28pt);                        
+                }
             }
-            .logo{
-                text-align: right;
-                @include breakpoint($min-page-width-md) {
-                    text-align: center !important;
+            .categories-list{                    
+                padding-left: 16%;
+                .category-item{  
+                    width: 80%;
+                    background-color: #439b51ff;
+                    background-image: url('../img/FLECHA-DE-DESPLAZAMIENTO.png');
+                    background-repeat: no-repeat;
+                    background-position-x: 100%;
+                    background-size: contain;
+                    color: #fff;                    
+                    @include FuturaStdBold(34pt);
+                    a{
+                        color: #fff;
+                    }
+                    @include breakpoint( max-width 991px ) {
+                        @include FuturaStdBold(28pt);                        
+                    } 
+                    @include breakpoint( $min-page-width-md ) {
+                        @include FuturaStdBold(20pt);                        
+                    } 
+                    @include breakpoint( max-width 500px ) {
+                        @include FuturaStdBold(14pt);                        
+                    }
+                }
+            }
+            .footer-btns{
+                height: 150px;
+                padding-left: 10%;
+                padding-right: 10%;
+                @include breakpoint( max-width 500px ) {
+                    height: 80px;                    
+                }
+                .next{
+                    height: 100%;
+                    background-image: url('../img/next.png');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: right;
+                    cursor: pointer;
+                    &:hover{
+                        background-image: url('../img/next_hover.png');
+                    }
+                }
+                .start{
+                    height: 100%;
+                    background-image: url('../img/home.png');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    cursor: pointer;
+
+                }
+            }
+        }
+
+        .category-container{
+            padding-left: 0px;
+            background-image: url('../img/bg_inter.png');
+            @include backgroundImage();
+            height: 100%;
+            .title-product{
+                @include FuturaStdBold(64pt);                    
+                color: #c0c0c0ff;                
+                margin-bottom: 0px;
+                @include breakpoint( $min-page-width-md ) {
+                    @include FuturaStdBold(48pt);                        
+                } 
+                @include breakpoint( max-width 500px ) {
+                    @include FuturaStdBold(36pt);                        
+                }
+                @include breakpoint( max-width 400px ) {
+                    @include FuturaStdBold(28pt);                        
+                }
+            }
+            .title-category{
+                @include FuturaStdBold(64pt);                    
+                color: #439b51ff;                
+                margin-top: -30px;
+                @include breakpoint( $min-page-width-md ) {
+                    @include FuturaStdBold(48pt);                        
+                }
+                @include breakpoint( max-width 500px ) {
+                    @include FuturaStdBold(36pt);                        
+                }
+                @include breakpoint( max-width 400px ) {
+                    @include FuturaStdBold(28pt);                        
+                    margin-top: -10px;
+                }
+            }
+            .items-list{
+                margin: 0px auto;
+                padding-left: 10%;
+                width: 80%;
+                .arrow{                    
+                    width: 160px;
+                }
+                
+                .item{
+                    background-image: url('../img/boton_green.png');
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    height: 260px;
+                    width: 260px;
+                    padding-top: 25%;
+                    color: #fff;
+                    @include FuturaStdBold(18pt);                    
+                    text-align: center;
+                    margin-bottom: 5px;
+                    a{
+                        color: #fff;
+                    }                    
+                    @include breakpoint( $min-page-width-md ) {
+                        @include FuturaStdBold(14pt);
+                        height: 200px;
+                        width: 200px;                        
+                    }   
+                    @include breakpoint( max-width 500px ) {
+                        @include FuturaStdBold(12pt);
+                        height: 150px;
+                        width: 150px;                        
+                    }
+                }
+            }
+
+            .footer-btns{
+                height: 150px;
+                padding-left: 10%;
+                padding-right: 10%;
+                @include breakpoint( max-width 500px ) {
+                    height: 80px;                    
+                }
+                .next{
+                    height: 100%;
+                    background-image: url('../img/next.png');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: right;
+                    cursor: pointer;
+                    &:hover{
+                        background-image: url('../img/next_hover.png');
+                    }
+                }
+                .start{
+                    height: 100%;
+                    background-image: url('../img/home.png');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .item-container{
+            background-image: url('../img/bg_inter.png');
+            @include backgroundImage();
+            min-height: 900px; 
+            .title-header{
+                line-height: 1.1;
+                @include FuturaStdBold(51pt);                    
+                .item-title{
+                    color: #439b51ff;                
+                }
+                .category-title{
+                    text-align: right;
+                    color: #c0c0c0ff;        
                 }
 
-            }
-            .address{
-                @include RobotoNormal(10pt);
-            }
-            .message{
-                @include RobotoMediumItalic(9pt);
-                @include breakpoint(max-width 493px) {
-                    line-height: 1;
+                @include breakpoint( $min-page-width-md ) {
+                    @include FuturaStdBold(38pt);                        
                 }
-
-                line-height: 0.2;
             }
-        }            
+            .description{
+                color: #616160ff;
+                @include FuturaStdMedium(16pt);
+                line-height: 1.5;
+                margin-left: 10%;
+                margin-right: 10%;
+            }
+
+            .slider{
+                margin: 0px auto;
+                .slick-prev{
+                    left: -50px;
+                    &:before {
+                        color: #000;
+                    } 
+                }
+                .slick-next{
+                    &:before {
+                        color: #000;
+                    }
+                }
+                .slick-slide{
+                    img{
+                        display: initial;
+                        height: 100%;
+                        @include breakpoint( $min-page-width-md ) {
+                            height: 250px;
+                        }
+                    }
+                }
+            }
+            .videos{
+                .title{
+                    @include FuturaStdBold(43pt);                    
+                    color: #439b51ff; 
+                    text-align: center;
+                    @include breakpoint( $min-page-width-md ) {
+                        @include FuturaStdBold(34pt);                        
+                    }
+                }
+                .video-item{
+                    height: 260px;
+                }
+            }
+            
+
+            .address-google{
+                .title{
+                    @include FuturaStdBold(43pt);                                        
+                    color: #439b51ff; 
+                    @include breakpoint( $min-page-width-md ) {
+                        @include FuturaStdBold(34pt);                        
+                    }
+                }
+                .map{
+                    width: 80%;
+                    height: 280px;
+                    margin: 0px auto;
+                }
+            }
+            .canvasimg{
+                .title{
+                    text-align: center;
+                    @include FuturaStdBold(43pt);                    
+                    color: #439b51ff;
+                }
+                height: 400px;                
+                .picture-360{
+                    height: 100%;
+                    width: 80%;
+                    margin: 0px auto;
+                    .image{
+                        height: 100%;
+                        width: 100%;                        
+                    }                   
+                }
+            }
+            
+            .video-popup{
+                position: absolute;
+                top: 0px;                
+                left: 0px;                
+                height: 100%;
+                width: 100%;
+                text-align: center;
+                background-color: #000000bf;
+                .reproductor{
+                    margin-top: 5%;
+                    padding-top: 10%;
+                    width: 50%;
+                    margin: 0px auto;
+                    height: 95%;
+                    @include breakpoint( $min-page-width-md ) {
+                        width: 80%;                        
+                    }
+                }
+            }
+
+            .footer-btns{
+                height: 150px;
+                margin-top: 15%;
+                .next{
+                    height: 100%;
+                    background-image: url('../img/next.png');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: right;
+                    cursor: pointer;
+                    &:hover{
+                        background-image: url('../img/next_hover.png');
+                    }
+                }
+                .start{
+                    height: 100%;
+                    background-image: url('../img/home.png');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    cursor: pointer;
+                }
+            }
+            
+        }
+
     }
-    
-
 }

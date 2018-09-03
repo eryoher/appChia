@@ -1,10 +1,8 @@
 import { combineReducers } from 'redux';
-import carouselReducer from './carousel';
-import productsReducer from './products';
+import componentsReducer from './components';
 
 const rootReducer = combineReducers({
-    carousel: carouselReducer,
-    products: productsReducer
+    data : componentsReducer
 });
 
 export default rootReducer;

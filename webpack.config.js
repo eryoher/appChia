@@ -12,22 +12,35 @@ module.exports = {
   },
   devtool: 'source-map',
   devServer:{
-    host:'localhost',
-    port: 3000,
+    host:'192.168.0.101',
+    port: 8081,
     inline: true,
     historyApiFallback: true,
-    contentBase: './',    
+    contentBase: './',
     https: false
   },
   mode: 'development',
   module: {
     rules: [
       {
+        test: /\.(gif|svg)$/i,
+        use: [
+          'file-loader',
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              bypassOnDebug: true, // webpack@1.x
+              disable: true, // webpack@2.x and newer
+            },
+          },
+        ],
+      },
+      {
         test: /\.css$/,
         use: [ 'style-loader', 'css-loader' ]
       },
-      { 
-        test: /\.scss$/, 
+      {
+        test: /\.scss$/,
         loaders: ['style-loader', 'css-loader?sourceMap', 'sass-loader?sourceMap']
       },
       {
@@ -42,7 +55,7 @@ module.exports = {
       {
           test: /\.(png|jpg)$/,
           loader: 'url-loader?limit=8192'
-      },      
+      },
       { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'url-loader?limit=10000&minetype=application/font-woff' },
       { test: /\.woff2$/,
