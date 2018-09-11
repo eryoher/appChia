@@ -1,5 +1,5 @@
 //local
-//export const PATH_SITE = 'http://localhost/chia/chiaApi/'
+// export const PATH_SITE = 'http://localhost/chia/chiaApi/'
 
 //Devserver
 export const PATH_SITE = 'http://appchia.optimatm.com/cake/'
@@ -17,3 +17,4 @@ export const FETCH_DATA_DEPARTMENT = 'FETCH_DATA_DEPARTMENT'
 export const SEND_DATA = 'SEND_DATA'
 export const FETCH_DATA_TYPES = 'FETCH_DATA_TYPES'
 export const FETCH_DATA_ACTIVITIES = 'FETCH_DATA_ACTIVITIES'
+export const GET_DATA_BANNERS = 'GET_DATA_BANNERS'

@@ -14,7 +14,7 @@ class Item extends Component {
 
     constructor(props, context) {
         super(props, context);
-        this.state = { 'closePopup': false, 'nextPage' : 0 , 'player' : []}
+        this.state = { 'closePopup': true, 'nextPage' : 0 , 'player' : []}
 
     }
 
@@ -33,7 +33,7 @@ class Item extends Component {
         const { item } = this.props
 
         if( this.props.item !== undefined && !this.state.closePopup ){
-            this.refs.player.subscribeToStateChange(this.handleStateChange.bind(this));
+           // this.refs.player.subscribeToStateChange(this.handleStateChange.bind(this));
         }
 
         if(  this.state.nextPage == 0 ){
@@ -77,7 +77,7 @@ class Item extends Component {
             speed: 300,
             slidesToShow: 1,
             slidesToScroll: 1,
-            autoplay : true,            
+            autoplay : true,
             customPaging: i => (
                 <div className="dot-slick"
                     style={{
@@ -135,7 +135,7 @@ class Item extends Component {
             }
         };
         videos.forEach(video => {
-            if(item[video] !== '' && item[video] !== null){                
+            if(item[video] !== '' && item[video] !== null){
                 exits = true;
                 rows.push(
                     <div className="col-sm-12 col-md-6 col-lg-4 col-lx-4 video-item" key={video}>
@@ -172,8 +172,8 @@ class Item extends Component {
             return(<div/>)
         }
         var video = item.category.product.video;
-        console.log('xxxxxx', video);
-        
+
+
         return (
             <div className="item-container">
                 <div className="container">
@@ -196,17 +196,17 @@ class Item extends Component {
                         </div>
                         { this.state.closePopup && this.renderVideos() }
                         { this.state.closePopup && <div className="address-google col-12">
-                            <div className="title col-12 text-center mb-3 mt-3">Como Llegar</div>
+                            <div className="title col-12 text-center mb-3 mt-3">¡Cómo llegar!</div>
                             <div className="map">
                                 <iframe
                                     height="100%"
                                     width="100%"
                                     className="embed-responsive-item"
-                                    src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyDOlBIF_tg7dBzMmCpzxlsSBBnY-RvJq_A&q=${item.address}`}>
+                                    src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyCHHIsAhcxJEV7KmBT4KWlRxf8FR4hLKKI&q=${item.address}`}>
                                 </iframe>
                             </div>
                         </div>}
-                        { this.state.closePopup &&
+                        { this.state.closePopup && 
                             <div className="col-12 canvasimg mt-5 mb-5">
                                 <div className="title">Recorrido</div>
                                 <div className="title">Virtual</div>
@@ -219,7 +219,7 @@ class Item extends Component {
                                 </div>
                             </div>
                         }
-                        { !this.state.closePopup &&
+                        { !this.state.closePopup && false &&
                             <div className="video-popup col-12">
                                 <div className="reproductor">
                                     <Player

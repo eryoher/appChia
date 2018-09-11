@@ -2,36 +2,36 @@ import axios from 'axios';
 import * as types from '../actions/types';
 
 
-  export function fetchDataCategories(productId){    
+  export function fetchDataCategories(productId){
     const request = axios.get(types.PATH_SITE + `categories/getListById/${productId}.json`);
     return{
       type: types.FETCH_DATA_CATEGORIES,
-      payload: request     
+      payload: request
     };
   }
 
-  export function getItem(id){    
+  export function getItem(id){
     const request = axios.get(types.PATH_SITE + `items/${id}.json`);
     return{
       type: types.FETCH_DATA_ITEM,
-      payload: request     
+      payload: request
     };
   }
 
 
-  export function getCategory(id){    
+  export function getCategory(id){
     const request = axios.get(types.PATH_SITE + `categories/${id}.json`);
     return{
       type: types.FETCH_DATA_CATEGORY,
-      payload: request     
+      payload: request
     };
   }
 
-  export function getProduct(productId){    
+  export function getProduct(productId){
     const request = axios.get(types.PATH_SITE + `products/${productId}.json`);
     return{
       type: types.FETCH_DATA_PRODUCT,
-      payload: request     
+      payload: request
     };
   }
 
@@ -39,13 +39,21 @@ import * as types from '../actions/types';
     const request = axios.get(types.PATH_SITE + 'products.json');
     return{
       type: types.FETCH_DATA_PRODUCTS,
-      payload: request     
+      payload: request
+    };
+  }
+
+  export function getBanners(){
+    const request = axios.get(types.PATH_SITE + 'banners.json');
+    return{
+      type: types.GET_DATA_BANNERS,
+      payload: request
     };
   }
 
 
   export function sendInfo(data){
-    
+
     var params = new URLSearchParams();
     params.append('front', true);
     params.append('name', data.name);

@@ -26,7 +26,7 @@ class Products extends Component {
     }
 
     componentWillMount(){
-        this.props.fetchDataProducts();    
+        this.props.fetchDataProducts();
     }
 
 
@@ -43,8 +43,8 @@ class Products extends Component {
 
         for (let i = 0; i < products.length; i++) {
             const product = products[i];
-            rows.push(            
-                <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-lx-6 text-center product-list" key={product.id} >
+            rows.push(
+                <div className="col-6 col-sm-6 col-md-6 col-lg-6 col-lx-6 text-center product-list" key={product.id} >
                     <Link to={`product/${product.id}`}>
                         <div className="product ">
                             {product.name}
@@ -52,16 +52,16 @@ class Products extends Component {
                     </Link>
                 </div>
             );
-            
+
         }
-    
-        return rows;    
+
+        return rows;
     }
- 
+
     render() {
-        
+
         return (
-            <div className="products-container">        
+            <div className="products-container">
                 <div className="header" />
                 <div className="container">
                     <div className="category-list row ">
@@ -82,7 +82,7 @@ class Products extends Component {
                                 </ControlBar>
                             </Player>
                         </div>
-                    </div>}   
+                    </div>}
                 </div>
                 <div className="footer" />
             </div>
@@ -90,10 +90,10 @@ class Products extends Component {
     }
 }
 
-function mapStateToProps(state){    
+function mapStateToProps(state){
     return {
       products : state.data.products,
     }
   }
-  
+
   export default connect (mapStateToProps, actions)(Products);
