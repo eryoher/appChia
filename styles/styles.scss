@@ -47,7 +47,7 @@ body{
                 background-color: #000000bf;
                 .reproductor{
                     height: 100%;
-                    width: 50%;
+                    width: 80%;
                     margin: 0px auto;
                     @include breakpoint( max-width 560px ) {
                         width: 80%;
@@ -84,7 +84,7 @@ body{
                 }
             }
 
-            background-image: url('../img/bg_home.png');
+            background-image: url('../img/bg_home.gif');
             @include backgroundImage();
               @include breakpoint( max-width 500px ) {
                      background-size: 100% 100%;

@@ -9,31 +9,36 @@ class Products extends Component {
 
     constructor(props, context) {
         super(props, context);
-        this.state = { 'closePopup': false, 'player' : []}
+        this.state = { 'closePopup': false, 'player' : [], videoEnded : false}
 
     }
 
     componentDidUpdate(){
-        if( !this.state.closePopup ){
+        if( !this.state.closePopup && !this.state.videoEnded ){
             this.refs.player.subscribeToStateChange(this.handleStateChange.bind(this));
         }
 
         if( !this.state.closePopup ){
             if( this.state.player.currentTime > 0 && this.state.player.ended ){
                 this.setState({ closePopup : true })
+                sessionStorage.setItem('videoEnded', true);
             }
         }
     }
 
     componentWillMount(){
         this.props.fetchDataProducts();
-    }
 
+        var key = sessionStorage.getItem('videoEnded');
+        if(key){
+            this.setState({'videoEnded':true});
+        }
+    }
 
     handleStateChange(state, prevState) {
         // copy player state to this component's state
         this.setState({
-        player: state
+            player: state
         });
     }
 
@@ -67,10 +72,11 @@ class Products extends Component {
                     <div className="category-list row ">
                         { (this.props.products !== undefined) ? this.renderProducts() : null }
                     </div>
-                    { !this.state.closePopup && <div className="popup-video">
+                    { !this.state.closePopup && !this.state.videoEnded && <div className="popup-video">
                         <div className="reproductor">
                             <Player
                                 autoPlay
+                                muted
                                 fluid = {false}
                                 width='100%'
                                 height='100%'

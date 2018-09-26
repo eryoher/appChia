@@ -173,7 +173,6 @@ class Item extends Component {
         }
         var video = item.category.product.video;
 
-
         return (
             <div className="item-container">
                 <div className="container">
@@ -206,7 +205,7 @@ class Item extends Component {
                                 </iframe>
                             </div>
                         </div>}
-                        { this.state.closePopup && 
+                        { this.state.closePopup &&
                             <div className="col-12 canvasimg mt-5 mb-5">
                                 <div className="title">Recorrido</div>
                                 <div className="title">Virtual</div>
@@ -219,7 +218,7 @@ class Item extends Component {
                                 </div>
                             </div>
                         }
-                        { !this.state.closePopup && false &&
+                        { !this.state.closePopup  &&
                             <div className="video-popup col-12">
                                 <div className="reproductor">
                                     <Player

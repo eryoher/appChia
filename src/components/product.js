@@ -114,8 +114,9 @@ class Product extends Component {
                     <div className="title text-center pt-5 pb-5">
                         <div className="title-product">
                             {(product !== undefined) ? product.name : null}
-                        </div>
-                        <div>CATEGORIA</div>
+                        </div>                        
+                        <div className="subtitle-product">CATEGORIA</div>
+
 
                     </div>
                     <div className="categories-list row">
