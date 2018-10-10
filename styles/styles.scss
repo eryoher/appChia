@@ -49,6 +49,13 @@ body{
                     height: 100%;
                     width: 80%;
                     margin: 0px auto;
+                    .img-home{
+                      height: 100%;
+                      @include breakpoint( max-width 667px ) {
+                        width: 100%;
+                        height: auto;
+                      }
+                    }
                     @include breakpoint( max-width 560px ) {
                         width: 80%;
                     }
@@ -627,6 +634,7 @@ body{
                     width: 50%;
                     margin: 0px auto;
                     height: 95%;
+
                     @include breakpoint( $min-page-width-md ) {
                         width: 80%;
                     }

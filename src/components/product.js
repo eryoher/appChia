@@ -40,7 +40,7 @@ class Product extends Component {
     }
 
     renderBaners(){
-      const { banners } = this.props
+      const { banners } = this.props      
       var rows = []
       var settings = {
           dots: false,
@@ -114,7 +114,7 @@ class Product extends Component {
                     <div className="title text-center pt-5 pb-5">
                         <div className="title-product">
                             {(product !== undefined) ? product.name : null}
-                        </div>                        
+                        </div>
                         <div className="subtitle-product">CATEGORIA</div>
 
 

@@ -15,7 +15,7 @@ class Products extends Component {
 
     componentDidUpdate(){
         if( !this.state.closePopup && !this.state.videoEnded ){
-            this.refs.player.subscribeToStateChange(this.handleStateChange.bind(this));
+            //this.refs.player.subscribeToStateChange(this.handleStateChange.bind(this));
         }
 
         if( !this.state.closePopup ){
@@ -57,14 +57,26 @@ class Products extends Component {
                     </Link>
                 </div>
             );
-
         }
 
         return rows;
     }
 
-    render() {
 
+    renderPopup(){
+        setTimeout(() => {
+            this.setState({ videoEnded : true } );
+        }, 7000);
+        return (
+            <div className="popup-video">
+                <div className="reproductor text-center">
+                  <img src='../../img/home-video.gif' className="img-home pt-2 pb-2" />
+                </div>
+            </div>
+        )
+    }
+
+    render() {
         return (
             <div className="products-container">
                 <div className="header" />
@@ -72,23 +84,7 @@ class Products extends Component {
                     <div className="category-list row ">
                         { (this.props.products !== undefined) ? this.renderProducts() : null }
                     </div>
-                    { !this.state.closePopup && !this.state.videoEnded && <div className="popup-video">
-                        <div className="reproductor">
-                            <Player
-                                autoPlay
-                                muted
-                                fluid = {false}
-                                width='100%'
-                                height='100%'
-                                ref = 'player'
-                            >
-                                <source src="../../videos/Institucional.mp4" />
-                                <ControlBar autoHide={false} disableDefaultControls={true}>
-                                    <PlayToggle />
-                                </ControlBar>
-                            </Player>
-                        </div>
-                    </div>}
+                    { !this.state.videoEnded && this.renderPopup() }
                 </div>
                 <div className="footer" />
             </div>
