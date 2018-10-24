@@ -49,8 +49,8 @@ class Category extends Component {
 
             rows.push(
                 <div className=" col-12 col-sm-12 col-md-6 col-lg-6 col-lx-6 mt-5" key={item.id}>
-                    <div className="item">
-                        <Link to={`/item/${item.id}`}>
+                    <Link to={`/item/${item.id}`}>
+                        <div className="item">
                             <p className="overflow-wrap">
                                 {item.name.split(' ').map(function(item, key) {
                                     return (
@@ -61,8 +61,8 @@ class Category extends Component {
                                     )
                                 })}
                             </p>
-                        </Link>
-                    </div>
+                        </div>
+                    </Link>
                 </div>
             );
         });
@@ -94,8 +94,9 @@ class Category extends Component {
                 </div>
                 <div className="container mt-5">
                     <div className="footer-btns row">
-                        <div className="start col-6" onClick={ () => this.handleRedirect(`/product/${productId}`)} />
-                        <div className="next col-6" onClick={ () => this.handleRedirect(`/category/${this.state.nextPage}`)} />
+                        <div className="start col-4" onClick={ () => this.handleRedirect(`/product/${productId}`)} />
+                        <div className="homePage col-4" onClick={ () => this.handleRedirect(`/`)} />
+                        <div className="next col-4" onClick={ () => this.handleRedirect(`/category/${this.state.nextPage}`)} />
 
                     </div>
                 </div>

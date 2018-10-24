@@ -28,7 +28,6 @@ class Products extends Component {
 
     componentWillMount(){
         this.props.fetchDataProducts();
-
         var key = sessionStorage.getItem('videoEnded');
         if(key){
             this.setState({'videoEnded':true});
@@ -66,6 +65,7 @@ class Products extends Component {
     renderPopup(){
         setTimeout(() => {
             this.setState({ videoEnded : true } );
+            sessionStorage.setItem('videoEnded', true);
         }, 7000);
         return (
             <div className="popup-video">

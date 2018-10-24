@@ -22,16 +22,23 @@ class Product extends Component {
 
     renderCategories(){
         const { product } = this.props;
-        var rows = [];
+        var rows = [];        
+        var background = ''
+        if( this.props.params.id == 1 ){
+            background = '../../../img/titulos_noticias.png';
+        }else{
+            background = '../../../img/fondo_categorias.png';
+        }
 
         product.categories.forEach(category => {
             rows.push(
                 <div className="col-12" key={category.id}>
-                    <div className="category-item pl-2 mb-3">
-                        <Link to={`/category/${category.id}`}>
+                    <Link to={`/category/${category.id}`}>
+                        <div className="category-item pl-2 mb-3" style={{ backgroundImage: `url(${background})`}} >
                             {category.name}
-                        </Link>
-                    </div>
+                        </div>
+                    </Link>
+
                 </div>
              );
         });
@@ -128,8 +135,9 @@ class Product extends Component {
                       { banners !== undefined && this.renderBaners() }
                     </div>
                     <div className="footer-btns row">
-                        <div className="start col-6" onClick={ () => this.handleRedirect('/')} />
-                        <div className="next col-6" onClick ={ () => this.handleRedirect(`/product/${this.state.nextPage}`) } />
+                        <div className="start col-4" onClick={ () => this.handleRedirect('/')} />
+                        <div className="homePage col-4" onClick={ () => this.handleRedirect(`/`)} />
+                        <div className="next col-4" onClick ={ () => this.handleRedirect(`/product/${this.state.nextPage}`) } />
 
                     </div>
                 </div>

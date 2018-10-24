@@ -136,11 +136,12 @@ class Item extends Component {
         };
         videos.forEach(video => {
             if(item[video] !== '' && item[video] !== null){
+                var codeVideo = ( item[video].split('v=')[1] === undefined ) ? item[video].split('/')[3] : item[video].split('v=')[1] ;
                 exits = true;
                 rows.push(
                     <div className="col-sm-12 col-md-6 col-lg-4 col-lx-4 video-item" key={video}>
                         <YouTube
-                            videoId={item[video].split('v=')[1]}
+                            videoId={ codeVideo }
                             opts={opts}
                         />
                     </div>
@@ -167,11 +168,11 @@ class Item extends Component {
     render() {
         const { item } = this.props
         const categoryId = ( item !== undefined ) ? item.category.id : null
-
         if( item === undefined){
             return(<div/>)
         }
         var video = item.category.product.video;
+        var showTitle = ( item.category.product.id == 1 ) ? false : true
 
         return (
             <div className="item-container">
@@ -194,7 +195,7 @@ class Item extends Component {
                             </div>
                         </div>
                         { this.state.closePopup && this.renderVideos() }
-                        { this.state.closePopup && <div className="address-google col-12">
+                        { showTitle && <div className="address-google col-12">
                             <div className="title col-12 text-center mb-3 mt-3">¡Cómo llegar!</div>
                             <div className="map">
                                 <iframe
@@ -205,7 +206,7 @@ class Item extends Component {
                                 </iframe>
                             </div>
                         </div>}
-                        { this.state.closePopup &&
+                        { showTitle &&
                             <div className="col-12 canvasimg mt-5 mb-5">
                                 <div className="title">Recorrido</div>
                                 <div className="title">Virtual</div>
@@ -218,32 +219,15 @@ class Item extends Component {
                                 </div>
                             </div>
                         }
-                        { !this.state.closePopup  &&
-                            <div className="video-popup col-12">
-                                <div className="reproductor">
-                                    <Player
-                                        autoPlay
-                                        fluid = {false}
-                                        width='100%'
-                                        height='100%'
-                                        ref = 'player'
-                                    >
-                                        <source src={`../../videos/${video}`} />
-                                        <ControlBar autoHide={false} disableDefaultControls={true}>
-                                            <PlayToggle />
-                                        </ControlBar>
-                                    </Player>
-                                </div>
-
-                            </div>
-                        }
+                
                     </div>
                 </div>
                 { this.state.closePopup &&
                     <div className="container mt-5">
                         <div className="footer-btns row">
-                            <div className="start col-6" onClick={ () => this.handleRedirect(`/category/${categoryId}`)} />
-                            <div className="next col-6" onClick={ () => this.handleRedirect(`/item/${this.state.nextPage}`)} />
+                            <div className="start col-4" onClick={ () => this.handleRedirect(`/category/${categoryId}`)} />
+                            <div className="homePage col-4" onClick={ () => this.handleRedirect(`/`)} />
+                            <div className="next col-4" onClick={ () => this.handleRedirect(`/item/${this.state.nextPage}`)} />
                         </div>
                     </div>
                 }
