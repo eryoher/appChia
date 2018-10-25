@@ -23,13 +23,7 @@ class Product extends Component {
     renderCategories(){
         const { product } = this.props;
         var rows = [];        
-        var background = ''
-        if( this.props.params.id == 1 ){
-            background = '../../../img/titulos_noticias.png';
-        }else{
-            background = '../../../img/fondo_categorias.png';
-        }
-
+        var background = '../../../img/fondo_categorias.png';
         product.categories.forEach(category => {
             rows.push(
                 <div className="col-12" key={category.id}>

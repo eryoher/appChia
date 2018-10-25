@@ -43,29 +43,29 @@ class Category extends Component {
     renderItems(){
         const { category } = this.props;
         var rows = [];
-
+        const classDiv = ( category.product.id == 1 ) ? 'col-12' : 'col-12 col-sm-12 col-md-6 col-lg-6 col-lx-6 mt-5'
+        const classItem = ( category.product.id == 1 ) ? 'category-item' : 'item'
         category.items.forEach((item , index)=> {
-            //console.log('tamaño::', item.name.length );
-
             rows.push(
-                <div className=" col-12 col-sm-12 col-md-6 col-lg-6 col-lx-6 mt-5" key={item.id}>
+                <div className={`${classDiv}`} key={item.id}>
                     <Link to={`/item/${item.id}`}>
-                        <div className="item">
+                        <div className={`${classItem}`}>
                             <p className="overflow-wrap">
-                                {item.name.split(' ').map(function(item, key) {
+                                { (category.product.id != 1) ? item.name.split(' ').map(function(item, key) {
                                     return (
                                         <span key={key}>
                                         {item}
                                         <br/>
                                         </span>
                                     )
-                                })}
+                                }):item.name }
                             </p>
                         </div>
                     </Link>
                 </div>
             );
         });
+        
         return rows
     }
 
