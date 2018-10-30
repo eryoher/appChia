@@ -43,15 +43,16 @@ class Category extends Component {
     renderItems(){
         const { category } = this.props;
         var rows = [];
-        const classDiv = ( category.product.id == 1 ) ? 'col-12' : 'col-12 col-sm-12 col-md-6 col-lg-6 col-lx-6 mt-5'
-        const classItem = ( category.product.id == 1 ) ? 'category-item' : 'item'
+        const divList = (category.product.id == 1 || category.product.id == 5 ) ? true : false
+        const classDiv = ( divList ) ? 'col-12' : 'col-12 col-sm-12 col-md-6 col-lg-6 col-lx-6 mt-5'
+        const classItem = ( divList ) ? 'category-item' : 'item'
         category.items.forEach((item , index)=> {
             rows.push(
                 <div className={`${classDiv}`} key={item.id}>
                     <Link to={`/item/${item.id}`}>
                         <div className={`${classItem}`}>
                             <p className="overflow-wrap">
-                                { (category.product.id != 1) ? item.name.split(' ').map(function(item, key) {
+                                { (!divList) ? item.name.split(' ').map(function(item, key) {
                                     return (
                                         <span key={key}>
                                         {item}

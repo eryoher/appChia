@@ -1,5 +1,5 @@
 //local
-// export const PATH_SITE = 'http://localhost/chia/chiaApi/'
+//export const PATH_SITE = 'http://localhost/chia/chiaApi/'
 
 //Devserver
 export const PATH_SITE = 'http://appchia.optimatm.com/cake/'

@@ -4,6 +4,11 @@
 
 body{
 
+    @include breakpoint( max-width 500px ) {
+
+        background-image: url('../img/bg_inter.png');
+    }
+
     .mt-5, .my-5 {
         margin-top: 3rem!important;
       @include breakpoint( max-width 400px ) {
@@ -84,6 +89,8 @@ body{
                 background-repeat: no-repeat;
                 height: 250px;
                 background-position-x: 50%;
+                position: relative;
+                top: 32px;
                 @include breakpoint( max-width 360px ) {
                     height: 150px;
 
@@ -98,10 +105,15 @@ body{
             .footer{
                 @include breakpoint( max-width 1199px ) {
                    position: relative;
-                   top: 380px;
+                   top: 440px;
 
                 }
                 @include breakpoint( max-width 991px ) {
+                   position: relative;
+                   top: 0px;
+
+                }
+                @include breakpoint( max-width 400px ) {
                    position: relative;
                    top: 0px;
 
@@ -139,29 +151,31 @@ body{
                         height: 260px;
                         width: 260px;
                         text-align: center;
-                        padding-top: 25%;
-                        margin: 20px;
+                        padding-top: 27%;
+                        margin: 0 auto;
                         color: #fff;
+                        position: relative;
+                        top: 30px;
                         @include breakpoint( max-width 991px ) {
                             padding-top: 40%;
                         }
                         @include breakpoint( max-width 767px ) {
-                            padding-top: 60%;
+                            padding-top: 53%;
                             margin: 0 auto;
                             font-size:16px;
                         }
                         @include breakpoint( max-width 590px ) {
                           height: 200px;
                           width: 200px;
-                          padding-top: 45%;
+                          padding-top: 38%;
                         }
                         @include breakpoint( max-width 510px ) {
-                          padding-top: 47%;
+                          padding-top: 43%;
                           margin: 0 auto;
-                          font-size: 10pt;
+                          font-size: 13pt;
                         }
                         @include breakpoint( max-width 400px ) {
-                          padding-top: 60%;
+                          padding-top: 46%;
                           margin: 0 auto;
                           font-size: 10pt;
                               height: 165px;
@@ -195,7 +209,8 @@ body{
             height: 100%;
             @include breakpoint( max-width 500px ) {
                 height: 100%;
-                    background-size: 100% 100%;
+                background-size: 100% 100%;
+                background-image: none;
             }
             .title{
                 @include FuturaStdBold(51pt);
@@ -237,6 +252,10 @@ body{
 
             .categories-list{
                 padding-left: 3%;
+                @include breakpoint( max-width 400px ) {
+                    padding-left: 8%;
+                }
+
                 .category-item{
                     width: 100%;
                     //background-image: url('../img/titulos_noticias.png');
@@ -252,6 +271,8 @@ body{
                     @include breakpoint( max-width 1199px ) {
                       background-size: contain;
                       height: 120px;
+                      font-size: 40px;
+                      padding-top: 3%;
                     }
 
                     @include breakpoint( max-width 991px ) {
@@ -267,6 +288,8 @@ body{
                     }
                     @include breakpoint( max-width 767px ) {
                       height: 70px;
+                      font-size:21px;
+                      padding-top: 3%;
                     }
 
                     @include breakpoint( max-width 500px ) {
@@ -275,16 +298,18 @@ body{
                         height: 62px;
                         padding-top: 2%;
                         color: #fff !important;
-                        font-size: 25pt;
+                        font-size: 18pt;
                         font-family: FuturaStdBold;
                         text-align: center;
                         margin-bottom: 3px !important;
                     }
                     @include breakpoint( max-width 400px ) {
                         height: 50px;
+                        font-size: 20px;
                     }
                     @include breakpoint( max-width 350px ) {
                         height: 38px;
+                        font-size: 18px;
                     }
                 }
 
@@ -320,15 +345,17 @@ body{
                 padding-left: 10%;
                 padding-right: 10%;
                 @include breakpoint( max-width 1199px ) {
-                  position: relative;
-                  top: 0px;
+                  position: fixed;
+                  bottom: 0px;
+                  width: 100%;
+                  right: 5px;
                 }
                 @include breakpoint( max-width 991px ) {
-                  position: relative;
-                  top: 0px;
+                  position: fixed;
+                  bottom: 0px;
                 }
                 @include breakpoint( max-width 500px ) {
-                    height: 80px;
+                    height: 100px;
                 }
                 .next{
                     height: 100%;
@@ -343,14 +370,20 @@ body{
                 }
 
                 .homePage{
-                    height: 80%;
+                    height: 50%;
                     background-image: url('../img/home_chia_naranja.png');
                     background-size: contain;
                     background-repeat: no-repeat;
                     cursor: pointer;
                     background-position: center;
+                    @include breakpoint( max-width 991px ) {
+                        height: 40%;
+                        position: relative;
+                        top: 40px;
+                    }
+
                 }
-                
+
                 .start{
                     height: 100%;
                     background-image: url('../img/home.png');
@@ -368,13 +401,20 @@ body{
                 .conten-slide{
                   .my-slide-content{
                     .slider-img{
-                      height:180px;
+                      height:auto;
                       width: 100%;
+                      margin: 0 auto;
                     }
                   }
                 }
-              }
+             }
+             @include breakpoint( max-width 400px ) {
+               height: auto;
+              width: 100%;
+             }
             }
+
+
         }
 
         .category-container{
@@ -390,12 +430,14 @@ body{
             }
 
             @include breakpoint( max-width 991px ) {
-               min-height: auto;
-                background-size: 100% 100%;
+              height: auto;
+              background-size: 100% 100%;
             }
 
             @include breakpoint( max-width 500px ) {
                background-size:100% 100%;
+               background-image:none;
+               min-height:0;
             }
 
             .title-product{
@@ -468,6 +510,7 @@ body{
                     @include FuturaStdBold(18pt);
                     text-align: center;
                     margin-bottom: 5px;
+                    margin: 0 auto;
                     a{
                         color: #fff;
                     }
@@ -476,21 +519,21 @@ body{
                         height: 250px;
                         width: 250px;
                         margin: 0 auto;
-                        padding-top: 26%;
+                        padding-top: 15%;
                     }
                     @include breakpoint( max-width 500px ) {
                         @include FuturaStdBold(12pt);
                         height: 185px;
                         width: 185px;
                         margin: 0 auto;
-                         padding-top: 20%;
+                         padding-top: 11%;
                     }
                     @include breakpoint( max-width 400px ) {
-                        @include FuturaStdBold(12pt);
+                        @include FuturaStdBold(11pt);
                         height: 150px;
                         width: 150px;
                         margin: 0 auto;
-                         padding-top: 20%;
+                         padding-top: 12%;
                     }
                 }
                 .category-item{
@@ -508,6 +551,8 @@ body{
                     @include breakpoint( max-width 1199px ) {
                       background-size: contain;
                       height: 120px;
+                      font-size: 40px;
+                      padding-top: 3%;
                     }
 
                     @include breakpoint( max-width 991px ) {
@@ -523,6 +568,8 @@ body{
                     }
                     @include breakpoint( max-width 767px ) {
                       height: 70px;
+                      font-size: 22px;
+                      padding-top: 3%;
                     }
 
                     @include breakpoint( max-width 500px ) {
@@ -531,16 +578,18 @@ body{
                         height: 62px;
                         padding-top: 2%;
                         color: #fff !important;
-                        font-size: 25pt;
+                        font-size: 18pt;
                         font-family: FuturaStdBold;
                         text-align: center;
                         margin-bottom: 3px !important;
                     }
                     @include breakpoint( max-width 400px ) {
                         height: 50px;
+                        font-size: 20px;
                     }
                     @include breakpoint( max-width 350px ) {
                         height: 38px;
+                        font-size:18px;
                     }
                 }
 
@@ -577,12 +626,14 @@ body{
                 padding-left: 10%;
                 padding-right: 10%;
                 @include breakpoint( max-width 1199px ) {
-                  position: relative;
-                  top: 0px;
+                  position: fixed;
+                  bottom: 0px;
+                  width: 100%;
+                  right: 5px;
                 }
                 @include breakpoint( max-width 991px ) {
-                  position: relative;
-                  top: 0px;
+                  position: fixed;
+                  bottom: 0px;
                 }
                 @include breakpoint( max-width 500px ) {
                     height: 120px;
@@ -599,12 +650,18 @@ body{
                     }
                 }
                 .homePage{
-                    height: 80%;
+                    height: 50%;
                     background-image: url('../img/home_chia_naranja.png');
                     background-size: contain;
                     background-repeat: no-repeat;
                     cursor: pointer;
                     background-position: center;
+
+                    @include breakpoint(max-width 991px ) {
+                      height: 40%;
+                      position:relative;
+                      top:40px;
+                    }
                 }
                 .start{
                     height: 100%;
@@ -819,12 +876,20 @@ body{
                 }
 
                 .homePage{
-                    height: 80%;
+                    height: 50%;
                     background-image: url('../img/home_chia_naranja.png');
                     background-size: contain;
                     background-repeat: no-repeat;
                     cursor: pointer;
                     background-position: center;
+
+                    @include breakpoint(max-width 991px ) {
+                        width: 50%;
+                        position:relative;
+                        top:40px;
+
+
+                    }
                 }
 
                 .start{
