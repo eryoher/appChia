@@ -7,14 +7,14 @@ import Slider from "react-slick";
 import 'aframe';
 import YouTube from 'react-youtube';
 import "../../node_modules/video-react/dist/video-react.css";
-import { Player, ControlBar, PlayToggle} from 'video-react';
+import { Player, ControlBar, PlayToggle } from 'video-react';
 
 class Item extends Component {
 
 
     constructor(props, context) {
         super(props, context);
-        this.state = { 'closePopup': true, 'nextPage' : 0 , 'player' : []}
+        this.state = { 'closePopup': true, 'nextPage': 0, 'player': [] }
 
     }
 
@@ -25,19 +25,19 @@ class Item extends Component {
         });
     }
 
-    componentWillMount(){
-        this.props.getItem( this.props.params.id );
+    componentWillMount() {
+        this.props.getItem(this.props.params.id);
     }
 
-    componentDidUpdate(){
+    componentDidUpdate() {
         const { item } = this.props
 
-        if( this.props.item !== undefined && !this.state.closePopup ){
-           // this.refs.player.subscribeToStateChange(this.handleStateChange.bind(this));
+        if (this.props.item !== undefined && !this.state.closePopup) {
+            // this.refs.player.subscribeToStateChange(this.handleStateChange.bind(this));
         }
 
-        if(  this.state.nextPage == 0 ){
-            if( item !== undefined ){
+        if (this.state.nextPage == 0) {
+            if (item !== undefined) {
                 var items = item.category.items;
                 //primera pagina
                 var inicio = items[0].id
@@ -45,10 +45,10 @@ class Item extends Component {
 
                 items.forEach((itm, index) => {
 
-                    if( inicio > itm.id ){
+                    if (inicio > itm.id) {
                         inicio = itm.id
                     }
-                    if( itm.id == this.props.params.id ){
+                    if (itm.id == this.props.params.id) {
                         next = (items[index + 1] !== undefined) ? items[index + 1].id : inicio
                     }
 
@@ -56,19 +56,19 @@ class Item extends Component {
 
                 //console.log('actual:::', this.props.params.id);
                 //console.log('next >>>>', next);
-                this.setState({'nextPage' : next});
+                this.setState({ 'nextPage': next });
             }
         }
 
-        if( !this.state.closePopup ){
-            if( this.state.player.currentTime > 0 && this.state.player.ended ){
-                this.setState({ closePopup : true })
+        if (!this.state.closePopup) {
+            if (this.state.player.currentTime > 0 && this.state.player.ended) {
+                this.setState({ closePopup: true })
             }
         }
 
     }
 
-    renderCarousel(item){
+    renderCarousel(item) {
         var pictures = item.assets;
 
         var settings = {
@@ -77,7 +77,7 @@ class Item extends Component {
             speed: 300,
             slidesToShow: 1,
             slidesToScroll: 1,
-            autoplay : true,
+            autoplay: true,
             customPaging: i => (
                 <div className="dot-slick"
                     style={{
@@ -92,7 +92,7 @@ class Item extends Component {
             ),
         }
 
-        if (pictures.length){
+        if (pictures.length) {
             return (
                 <Slider {...settings}>
                     {this.divSlider(pictures)}
@@ -101,15 +101,15 @@ class Item extends Component {
         }
     }
 
-    divSlider(pictures){
+    divSlider(pictures) {
         var rows = [];
         for (var key in pictures) {
             var picture = pictures[key];
             rows.push(
                 <div key={key} className="conten-slide">
-                <div key={key} className="my-slide-content text-center">
-                    <img src={picture.path} alt="" className="slider-img"/>
-                </div>
+                    <div key={key} className="my-slide-content text-center">
+                        <img src={picture.path} alt="" className="slider-img" />
+                    </div>
                 </div>
             );
 
@@ -117,31 +117,31 @@ class Item extends Component {
         return rows;
     }
 
-    handleRedirect( path ){
+    handleRedirect(path) {
         window.location.href = path;
     }
 
-    renderVideos(){
+    renderVideos() {
         const { item } = this.props
         var rows = [];
         var result = [];
         var exits = false
-        var videos = [ 'video1','video2', 'video3' ] //numero de videos
+        var videos = ['video1', 'video2', 'video3'] //numero de videos
         const opts = {
             height: '100%',
             width: '100%',
             playerVars: { // https://developers.google.com/youtube/player_parameters
-              autoplay: 0
+                autoplay: 0
             }
         };
         videos.forEach(video => {
-            if(item[video] !== '' && item[video] !== null){
-                var codeVideo = ( item[video].split('v=')[1] === undefined ) ? item[video].split('/')[3] : item[video].split('v=')[1] ;
+            if (item[video] !== '' && item[video] !== null) {
+                var codeVideo = (item[video].split('v=')[1] === undefined) ? item[video].split('/')[3] : item[video].split('v=')[1];
                 exits = true;
                 rows.push(
                     <div className="col-sm-12 col-md-6 col-lg-4 col-lx-4 video-item" key={video}>
                         <YouTube
-                            videoId={ codeVideo }
+                            videoId={codeVideo}
                             opts={opts}
                         />
                     </div>
@@ -149,7 +149,7 @@ class Item extends Component {
             }
         });
 
-        if(exits){
+        if (exits) {
             result = (
                 <div className="videos mt-5 col-12">
                     <div className="title mb-3">
@@ -167,12 +167,12 @@ class Item extends Component {
 
     render() {
         const { item } = this.props
-        const categoryId = ( item !== undefined ) ? item.category.id : null
-        if( item === undefined){
-            return(<div/>)
+        const categoryId = (item !== undefined) ? item.category.id : null
+        if (item === undefined) {
+            return (<div />)
         }
         var video = item.category.product.video;
-        var showTitle = ( item.category.product.id == 1 ) ? false : true
+        var showTitle = (item.category.product.id == 1) ? false : true
 
         return (
             <div className="item-container">
@@ -194,40 +194,40 @@ class Item extends Component {
                                 {item.description}
                             </div>
                         </div>
-                        { this.state.closePopup && this.renderVideos() }
-                        { showTitle && <div className="address-google col-12">
+                        {this.state.closePopup && this.renderVideos()}
+                        {showTitle && <div className="address-google col-12">
                             <div className="title col-12 text-center mb-3 mt-3">¡Cómo llegar!</div>
                             <div className="map">
                                 <iframe
                                     height="100%"
                                     width="100%"
                                     className="embed-responsive-item"
-                                    src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyCHHIsAhcxJEV7KmBT4KWlRxf8FR4hLKKI&q=${item.address}`}>
+                                    src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyD-VoxbjICMaLVt7ME3VEjCEThsVQf2DHM=${item.address}`}>
                                 </iframe>
                             </div>
                         </div>}
-                        { showTitle &&
+                        {showTitle &&
                             <div className="col-12 canvasimg mt-5 mb-5">
                                 <div className="title">Recorrido</div>
                                 <div className="title">Virtual</div>
 
                                 <div className="picture-360">
                                     <a-scene embedded className="image">
-                                            <img id="sky" src={item.img360} crossOrigin="anonymous" />
+                                        <img id="sky" src={item.img360} crossOrigin="anonymous" />
                                         <a-sky src="#sky" rotation="0 0 0"></a-sky>
                                     </a-scene>
                                 </div>
                             </div>
                         }
-                
                     </div>
                 </div>
-                { this.state.closePopup &&
+                {this.state.closePopup &&
                     <div className="container mt-5">
-                        <div className="footer-btns row">
-                            <div className="start col-4" onClick={ () => this.handleRedirect(`/category/${categoryId}`)} />
-                            <div className="homePage col-4" onClick={ () => this.handleRedirect(`/`)} />
-                            <div className="next col-4" onClick={ () => this.handleRedirect(`/item/${this.state.nextPage}`)} />
+                        
+                        <div className="footer-btns container row">
+                            <div className="start col-4 col-sm-4 col-md-4 col-lg-4 col-lx-4" onClick={() => this.handleRedirect(`/category/${categoryId}`)} />
+                            <div className="homePage col-4 col-sm-4 col-md-4 col-lg-4 col-lx-4" onClick={() => this.handleRedirect(`/`)} />
+                            <div className="next col-4 col-sm-4 col-md-4 col-lg-4 col-lx-4" onClick={() => this.handleRedirect(`/item/${this.state.nextPage}`)} />
                         </div>
                     </div>
                 }
@@ -236,9 +236,9 @@ class Item extends Component {
     }
 }
 
-function mapStateToProps(state){
+function mapStateToProps(state) {
     return {
-        item : state.data.item,
+        item: state.data.item,
     }
 }
-export default connect (mapStateToProps, actions)(Item);
+export default connect(mapStateToProps, actions)(Item);

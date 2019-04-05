@@ -2,35 +2,35 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import * as actions from '../actions';
-import { Player, ControlBar, PlayToggle} from 'video-react';
+import { Player, ControlBar, PlayToggle } from 'video-react';
 
 
 class Products extends Component {
 
     constructor(props, context) {
         super(props, context);
-        this.state = { 'closePopup': false, 'player' : [], videoEnded : false}
+        this.state = { 'closePopup': false, 'player': [], videoEnded: false }
 
     }
 
-    componentDidUpdate(){
-        if( !this.state.closePopup && !this.state.videoEnded ){
+    componentDidUpdate() {
+        if (!this.state.closePopup && !this.state.videoEnded) {
             //this.refs.player.subscribeToStateChange(this.handleStateChange.bind(this));
         }
 
-        if( !this.state.closePopup ){
-            if( this.state.player.currentTime > 0 && this.state.player.ended ){
-                this.setState({ closePopup : true })
+        if (!this.state.closePopup) {
+            if (this.state.player.currentTime > 0 && this.state.player.ended) {
+                this.setState({ closePopup: true })
                 sessionStorage.setItem('videoEnded', true);
             }
         }
     }
 
-    componentWillMount(){
+    componentWillMount() {
         this.props.fetchDataProducts();
         var key = sessionStorage.getItem('videoEnded');
-        if(key){
-            this.setState({'videoEnded':true});
+        if (key) {
+            this.setState({ 'videoEnded': true });
         }
     }
 
@@ -41,7 +41,7 @@ class Products extends Component {
         });
     }
 
-    renderProducts(){
+    renderProducts() {
         const { products } = this.props
         var rows = []
 
@@ -62,15 +62,15 @@ class Products extends Component {
     }
 
 
-    renderPopup(){
+    renderPopup() {
         setTimeout(() => {
-            this.setState({ videoEnded : true } );
+            this.setState({ videoEnded: true });
             sessionStorage.setItem('videoEnded', true);
         }, 7000);
         return (
             <div className="popup-video">
                 <div className="reproductor text-center">
-                  <img src='../../img/home-video.gif' className="img-home pt-2 pb-2" />
+                    <img src='../../img/home-video.gif' className="img-home pt-2 pb-2" />
                 </div>
             </div>
         )
@@ -81,10 +81,12 @@ class Products extends Component {
             <div className="products-container">
                 <div className="header" />
                 <div className="container">
-                    <div className="category-list row ">
-                        { (this.props.products !== undefined) ? this.renderProducts() : null }
+                    <div className="category-list">
+                        <div className="row ">
+                            {(this.props.products !== undefined) ? this.renderProducts() : null}
+                        </div>
+                        {!this.state.videoEnded && this.renderPopup()}
                     </div>
-                    { !this.state.videoEnded && this.renderPopup() }
                 </div>
                 <div className="footer" />
             </div>
@@ -92,10 +94,10 @@ class Products extends Component {
     }
 }
 
-function mapStateToProps(state){
+function mapStateToProps(state) {
     return {
-      products : state.data.products,
+        products: state.data.products,
     }
-  }
+}
 
-  export default connect (mapStateToProps, actions)(Products);
+export default connect(mapStateToProps, actions)(Products);
