@@ -385,7 +385,6 @@ body {
       padding-left: 0px;
       background-image: url("../img/bg_inter.png");
       @include backgroundImage();
-
       @include breakpoint(max-width 1199px) {
         min-height: 1776px;
         background-size: 100% 100%;
