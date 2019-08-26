@@ -1,907 +1,834 @@
-@import '../node_modules/compass-mixins/lib/compass';
-@import '../node_modules/breakpoint-sass/stylesheets/breakpoint';
-@import 'functions';
+@import "../node_modules/breakpoint-sass/stylesheets/breakpoint";
+@import "../node_modules/compass-mixins/lib/compass";
+@import "./functions.scss";
 
-body{
-
-    @include breakpoint( max-width 500px ) {
-
-        background-image: url('../img/bg_inter.png');
+body {
+  @include breakpoint(max-width 500px) {
+    background-image: url("../img/bg_inter.png");
+  }
+  .mt-5,
+  .my-5 {
+    margin-top: 3rem !important;
+    @include breakpoint(max-width 400px) {
+      margin-top: 1rem !important;
     }
-
-    .mt-5, .my-5 {
-        margin-top: 3rem!important;
-      @include breakpoint( max-width 400px ) {
-          margin-top: 2rem!important;
+  }
+  .pb-5,
+  .py-5 {
+    padding-bottom: 3rem !important;
+    @include breakpoint(max-width 400px) {
+      padding-bottom: 1rem !important;
+    }
+  }
+  .container-fluid {
+    @include breakpoint(max-width 1199px) {
+      padding-right: 0px;
+      padding-left: 0px;
+    }
+    @include breakpoint(max-width 767px) {
+      padding-right: 0px;
+      padding-left: 0px;
+    }
+  }
+  #chiaUI {
+    width: 100%;
+    a {
+      text-decoration: none;
+      &:hover {
+        text-decoration: none;
       }
-
     }
-
-    .pb-5, .py-5 {
-        padding-bottom: 3rem!important;
-        @include breakpoint( max-width 400px ) {
-            padding-bottom: 1rem!important;
-        }
-    }
-
-    .container-fluid{
-        @include breakpoint( max-width 1199px ) {
-           padding-right: 0px;
-          padding-left: 0px;
-        }
-        @include breakpoint( max-width 767px ) {
-           padding-right: 0px;
-          padding-left: 0px;
-        }
-    }
-
-    #chiaUI{
-        width: 100%;
-        a{
-            text-decoration: none;
-            &:hover{
-                text-decoration: none;
-
-            }
-        }
-        .products-container{
-
-            @include breakpoint( max-width 1199px ) {
-              min-height: 1776px;
-              background-size: 100% 100%;
-            }
-            @include breakpoint( max-width 991px ) {
-              min-height: auto;
-              background-size: 100% 100%;
-            }
-
-
-            .popup-video{
-                //border: solid 1px red;
-                width: 93%;
-                height: 100%;
-                position: absolute;
-                top: 0px;
-                left: 3.5%;
-                background-color: #000000bf;
-                .reproductor{
-                    height: 100%;
-                    width: 80%;
-                    margin: 0px auto;
-                    @include breakpoint( max-width 560px ) {
-                        width: 80%;
-                    }
-
-                  .img-home{
-                    width: 100%;
-                    height:auto;
-                    @include breakpoint( max-width 667px ) {
-                        width: 100%;
-                        height:auto;
-                    }
-                  }
-                }
-            }
-
-            .header{
-                background-image: url('../img/header_home.png');
-                background-size: contain;
-                background-repeat: no-repeat;
-                height: 250px;
-                background-position-x: 50%;
-                position: relative;
-                top: 32px;
-                @include breakpoint( max-width 360px ) {
-                    height: 150px;
-
-                }
-                @include breakpoint( max-width 590px ) {
-                   height: 185px;
-
-                }
-
-
-            }
-            .footer{
-                @include breakpoint( max-width 1199px ) {
-                   position: relative;
-                   top: 440px;
-
-                }
-                @include breakpoint( max-width 991px ) {
-                   position: relative;
-                   top: 0px;
-
-                }
-                @include breakpoint( max-width 400px ) {
-                   position: relative;
-                   top: 0px;
-
-                }
-
-                background-image: url('../img/footer_home.png');
-                background-size: contain;
-                background-repeat: no-repeat;
-                height: 250px;
-                background-position-x: 50%;
-                @include breakpoint( max-width 360px ) {
-                    height: 90px;
-
-                }
-            }
-
-            background-image: url('../img/bg_home.gif');
-            @include backgroundImage();
-              @include breakpoint( max-width 500px ) {
-                     background-size: 100% 100%;
-
-              }
-
-
-            .category-list{
-                width: 100%;
-                min-height: 500px;
-                .product-list{
-                    padding-left: 5%;
-                    .product{
-                        @include FuturaStdBold(16pt);
-                        background-image: url('../img/orng_1.png');
-                        background-repeat: no-repeat;
-                        background-size: contain;
-                        height: 260px;
-                        width: 260px;
-                        text-align: center;
-                        padding-top: 27%;
-                        margin: 0 auto;
-                        color: #fff;
-                        position: relative;
-                        top: 30px;
-                        @include breakpoint( max-width 991px ) {
-                            padding-top: 40%;
-                        }
-                        @include breakpoint( max-width 767px ) {
-                            padding-top: 53%;
-                            margin: 0 auto;
-                            font-size:16px;
-                        }
-                        @include breakpoint( max-width 590px ) {
-                          height: 200px;
-                          width: 200px;
-                          padding-top: 38%;
-                        }
-                        @include breakpoint( max-width 510px ) {
-                          padding-top: 43%;
-                          margin: 0 auto;
-                          font-size: 13pt;
-                        }
-                        @include breakpoint( max-width 400px ) {
-                          padding-top: 46%;
-                          margin: 0 auto;
-                          font-size: 10pt;
-                              height: 165px;
-                              width: 165px;
-                        }
-                        @include breakpoint( max-width 320px ) {
-                          padding-top: 50%;
-                          margin: 0 auto;
-                          font-size: 10pt;
-                              height: 165px;
-                              width: 138px;
-                        }
-                    }
-                }
-            }
-        }
-
-        .product-container{
-            @include breakpoint( max-width 1199px ) {
-                  min-height: 1776px;
-                  background-size: 100% 100%;
-            }
-            @include breakpoint( max-width 991px ) {
-                  min-height: auto;
-                  background-size: 100% 100%;
-            }
-
-
-            background-image: url('../img/bg_inter.png');
-            @include backgroundImage();
-            height: 100%;
-            @include breakpoint( max-width 500px ) {
-                height: 100%;
-                background-size: 100% 100%;
-                background-image: none;
-            }
-            .title{
-                @include FuturaStdBold(51pt);
-                color: #439b51ff;
-                .title-product{
-                    text-align: right;
-                    color: #c0c0c0ff;
-                    padding-right: 0%;
-                }
-
-                @include breakpoint( $min-page-width-md ) {
-                    @include FuturaStdBold(45pt);
-                }
-                @include breakpoint( max-width 500px ) {
-                    @include FuturaStdBold(40pt);
-                    padding-right:10% !important;
-                }
-                @include breakpoint( max-width 400px ) {
-                    @include FuturaStdBold(35pt);
-                    padding-right:10% !important;
-                }
-            }
-
-            .subtitle-product{
-               @include FuturaStdBold(30pt);
-               position: relative;
-               top: -21px;
-
-              @include breakpoint( max-width 500px ) {
-                  @include FuturaStdBold(26pt);
-                  padding-right:0% !important;
-                  text-align:center;
-              }
-              @include breakpoint( max-width 400px ) {
-                  @include FuturaStdBold(21pt);
-              }
-
-            }
-
-            .categories-list{
-                padding-left: 3%;
-                @include breakpoint( max-width 400px ) {
-                    padding-left: 8%;
-                }
-
-                .category-item{
-                    width: 100%;
-                    //background-image: url('../img/titulos_noticias.png');
-                    background-repeat: no-repeat;
-                    background-size: cover;
-                    height: 146px;
-                    padding-top: 2%;
-                    color: #fff !important;
-                    font-size: 34pt;
-                    font-family: FuturaStdBold;
-                    text-align: center;
-
-                    @include breakpoint( max-width 1199px ) {
-                      background-size: contain;
-                      height: 120px;
-                      font-size: 40px;
-                      padding-top: 3%;
-                    }
-
-                    @include breakpoint( max-width 991px ) {
-                        width: 100%;
-                        background-size: contain;
-                        height: 91px;
-                        padding-top: 2%;
-                        color: #fff !important;
-                        font-size: 25pt;
-                        font-family: FuturaStdBold;
-                        text-align: center;
-                        margin-bottom: 6px !important;
-                    }
-                    @include breakpoint( max-width 767px ) {
-                      height: 70px;
-                      font-size:21px;
-                      padding-top: 3%;
-                    }
-
-                    @include breakpoint( max-width 500px ) {
-                        width: 100%;
-                        background-size: contain;
-                        height: 62px;
-                        padding-top: 2%;
-                        color: #fff !important;
-                        font-size: 18pt;
-                        font-family: FuturaStdBold;
-                        text-align: center;
-                        margin-bottom: 3px !important;
-                    }
-                    @include breakpoint( max-width 400px ) {
-                        height: 50px;
-                        font-size: 20px;
-                    }
-                    @include breakpoint( max-width 350px ) {
-                        height: 38px;
-                        font-size: 18px;
-                    }
-                }
-
-                .category-item a{
-                    text-align:center;
-                    padding-top: 2%;
-                    color: #fff !important;
-                    font-size: 34pt;
-                    font-family: FuturaStdBold;
-                     @include breakpoint( max-width 991px ) {
-                      font-size: 25pt;
-
-                      @include breakpoint( max-width 500px ) {
-                      font-size:22px;
-                      position: relative;
-                          top: -9px;
-                      }
-                      @include breakpoint( max-width 400px ) {
-                          font-size: 13pt;
-                      }
-                      @include breakpoint( max-width 400px ) {
-                          font-size: 11pt;
-                              top: -17px;
-                      }
-
-
-                     }
-
-                }
-            }
-            .footer-btns{
-                height: 150px;
-                padding-left: 10%;
-                padding-right: 10%;
-                @include breakpoint( max-width 1199px ) {
-                  position: fixed;
-                  bottom: 0px;
-                  width: 100%;
-                  right: 5px;
-                }
-                @include breakpoint( max-width 991px ) {
-                  position: fixed;
-                  bottom: 0px;
-                }
-                @include breakpoint( max-width 500px ) {
-                    height: 100px;
-                }
-                .next{
-                    height: 100%;
-                    background-image: url('../img/next.png');
-                    background-size: contain;
-                    background-repeat: no-repeat;
-                    background-position: right;
-                    cursor: pointer;
-                    &:hover{
-                        background-image: url('../img/next_hover.png');
-                    }
-                }
-
-                .homePage{
-                    height: 50%;
-                    background-image: url('../img/home_chia_naranja.png');
-                    background-size: contain;
-                    background-repeat: no-repeat;
-                    cursor: pointer;
-                    background-position: center;
-                    @include breakpoint( max-width 991px ) {
-                        height: 40%;
-                        position: relative;
-                        top: 40px;
-                    }
-
-                }
-
-                .start{
-                    height: 100%;
-                    background-image: url('../img/home.png');
-                    background-size: contain;
-                    background-repeat: no-repeat;
-                    cursor: pointer;
-
-                }
-            }
-
-            .banner{
-              height: 180px;
-              .slick-slider{
-                width: 100%;
-                .conten-slide{
-                  .my-slide-content{
-                    .slider-img{
-                      height:auto;
-                      width: 100%;
-                      margin: 0 auto;
-                    }
-                  }
-                }
-             }
-             @include breakpoint( max-width 400px ) {
-               height: auto;
+    .products-container {
+      @include breakpoint(max-width 1199px) {
+        min-height: 1776px;
+        background-size: 100% 100%;
+      }
+      @include breakpoint(max-width 991px) {
+        min-height: auto;
+        background-size: 100% 100%;
+      }
+      .popup-video {
+        //border: solid 1px red;
+        width: 93%;
+        height: 100%;
+        position: absolute;
+        top: 0px;
+        left: 3.5%;
+        background-color: #000000bf;
+        .reproductor {
+          height: 100%;
+          width: 80%;
+          margin: 0px auto;
+          @include breakpoint(max-width 560px) {
+            width: 80%;
+          }
+          .img-home {
+            width: 100%;
+            height: auto;
+            @include breakpoint(max-width 667px) {
               width: 100%;
-             }
-            }
-
-
-        }
-
-        .category-container{
-
-            padding-left: 0px;
-            background-image: url('../img/bg_inter.png');
-            @include backgroundImage();
-            height: 100%;
-
-            @include breakpoint( max-width 1199px ) {
-               min-height: 1776px;
-                background-size: 100% 100%;
-            }
-
-            @include breakpoint( max-width 991px ) {
               height: auto;
-              background-size: 100% 100%;
             }
-
-            @include breakpoint( max-width 500px ) {
-               background-size:100% 100%;
-               background-image:none;
-               min-height:0;
-            }
-
-            .title-product{
-                @include FuturaStdBold(64pt);
-                color: #c0c0c0ff;
-                margin-bottom: 0px;
-
-                @include breakpoint( $min-page-width-md ) {
-                    @include FuturaStdBold(45pt);
-                    text-align: right;
-                }
-                @include breakpoint( max-width 500px ) {
-                    @include FuturaStdBold(36pt);
-                    font-size: 45px;
-                    padding-right: 30px;
-
-
-                }
-                @include breakpoint( max-width 400px ) {
-                    @include FuturaStdBold(33pt);
-                }
-            }
-            .title-category{
-                @include FuturaStdBold(64pt);
-                color: #439b51ff;
-                margin-top: -30px;
-                @include breakpoint( $min-page-width-md ) {
-                    @include FuturaStdBold(30pt);
-                    text-align: center;
-                }
-                @include breakpoint( max-width 500px ) {
-                    @include FuturaStdBold(36pt);
-                    text-align:center;
-                    padding-left:30px;
-                    font-size:24px;
-                    padding-top:15px;
-
-                }
-                @include breakpoint( max-width 400px ) {
-                    @include FuturaStdBold(21pt);
-                    margin-top: -13px;
-                    padding-top:5px;
-                }
-            }
-            .items-list{
-                margin: 0px auto;
-                //padding-left: 10%;
-                //width: 80%;
-                .arrow{
-                    width: 160px;
-                }
-
-                br{
-                  display:block;
-
-                  @include breakpoint( $min-page-width-md ) {
-                    display:block;
-                  }
-
-                }
-
-                .item{
-                    background-image: url('../img/boton_green.png');
-                    background-repeat: no-repeat;
-                    background-size: contain;
-                    height: 260px;
-                    width: 260px;
-                    padding-top: 15%;
-                    color: #fff;
-                    @include FuturaStdBold(18pt);
-                    text-align: center;
-                    margin-bottom: 5px;
-                    margin: 0 auto;
-                    a{
-                        color: #fff;
-                    }
-                    @include breakpoint( $min-page-width-md ) {
-                        @include FuturaStdBold(14pt);
-                        height: 250px;
-                        width: 250px;
-                        margin: 0 auto;
-                        padding-top: 15%;
-                    }
-                    @include breakpoint( max-width 500px ) {
-                        @include FuturaStdBold(12pt);
-                        height: 185px;
-                        width: 185px;
-                        margin: 0 auto;
-                         padding-top: 11%;
-                    }
-                    @include breakpoint( max-width 400px ) {
-                        @include FuturaStdBold(11pt);
-                        height: 150px;
-                        width: 150px;
-                        margin: 0 auto;
-                         padding-top: 12%;
-                    }
-                }
-                .category-item{
-                    width: 100%;
-                    background-image: url('../img/titulos_noticias.png');
-                    background-repeat: no-repeat;
-                    background-size: cover;
-                    height: 146px;
-                    padding-top: 2%;
-                    color: #fff !important;
-                    font-size: 34pt;
-                    font-family: FuturaStdBold;
-                    text-align: center;
-
-                    @include breakpoint( max-width 1199px ) {
-                      background-size: contain;
-                      height: 120px;
-                      font-size: 40px;
-                      padding-top: 3%;
-                    }
-
-                    @include breakpoint( max-width 991px ) {
-                        width: 100%;
-                        background-size: contain;
-                        height: 91px;
-                        padding-top: 2%;
-                        color: #fff !important;
-                        font-size: 25pt;
-                        font-family: FuturaStdBold;
-                        text-align: center;
-                        margin-bottom: 6px !important;
-                    }
-                    @include breakpoint( max-width 767px ) {
-                      height: 70px;
-                      font-size: 22px;
-                      padding-top: 3%;
-                    }
-
-                    @include breakpoint( max-width 500px ) {
-                        width: 100%;
-                        background-size: contain;
-                        height: 62px;
-                        padding-top: 2%;
-                        color: #fff !important;
-                        font-size: 18pt;
-                        font-family: FuturaStdBold;
-                        text-align: center;
-                        margin-bottom: 3px !important;
-                    }
-                    @include breakpoint( max-width 400px ) {
-                        height: 50px;
-                        font-size: 20px;
-                    }
-                    @include breakpoint( max-width 350px ) {
-                        height: 38px;
-                        font-size:18px;
-                    }
-                }
-
-                .category-item a{
-                    text-align:center;
-                    padding-top: 2%;
-                    color: #fff !important;
-                    font-size: 34pt;
-                    font-family: FuturaStdBold;
-                     @include breakpoint( max-width 991px ) {
-                      font-size: 25pt;
-
-                      @include breakpoint( max-width 500px ) {
-                      font-size:22px;
-                      position: relative;
-                          top: -9px;
-                      }
-                      @include breakpoint( max-width 400px ) {
-                          font-size: 13pt;
-                      }
-                      @include breakpoint( max-width 400px ) {
-                          font-size: 11pt;
-                              top: -17px;
-                      }
-
-
-                     }
-
-                }
-            }
-
-            .footer-btns{
-                height: 150px;
-                padding-left: 10%;
-                padding-right: 10%;
-                @include breakpoint( max-width 1199px ) {
-                  position: fixed;
-                  bottom: 0px;
-                  width: 100%;
-                  right: 5px;
-                }
-                @include breakpoint( max-width 991px ) {
-                  position: fixed;
-                  bottom: 0px;
-                }
-                @include breakpoint( max-width 500px ) {
-                    height: 120px;
-                }
-                .next{
-                    height: 100%;
-                    background-image: url('../img/next.png');
-                    background-size: contain;
-                    background-repeat: no-repeat;
-                    background-position: right;
-                    cursor: pointer;
-                    &:hover{
-                        background-image: url('../img/next_hover.png');
-                    }
-                }
-                .homePage{
-                    height: 50%;
-                    background-image: url('../img/home_chia_naranja.png');
-                    background-size: contain;
-                    background-repeat: no-repeat;
-                    cursor: pointer;
-                    background-position: center;
-
-                    @include breakpoint(max-width 991px ) {
-                      height: 40%;
-                      position:relative;
-                      top:40px;
-                    }
-                }
-                .start{
-                    height: 100%;
-                    background-image: url('../img/home.png');
-                    background-size: contain;
-                    background-repeat: no-repeat;
-                    cursor: pointer;
-                }
-            }
+          }
         }
-
-        .item-container{
-            background-image: url('../img/bg_inter.png');
-            @include backgroundImage();
-            min-height: 900px;
-
-            @include breakpoint( $min-page-width-md ) {
-                background-size: 100% 100%;
-
-            }
-            .title-header{
-                line-height: 1.1;
-                @include FuturaStdBold(51pt);
-                .item-title{
-                    color: #439b51ff;
-                    text-align: center;
-                     font-size: 30pt;
-
-
-                  @include breakpoint(  max-width 530px ) {
-                    font-size: 24pt;
-                  }
-                  @include breakpoint(  max-width 414px ) {
-                    font-size: 20pt;
-                  }
-                  @include breakpoint(  max-width 315px ) {
-                    font-size: 18pt;
-                  }
-
-
-                }
-                .category-title{
-                    text-align: right;
-                    color: #c0c0c0ff;
-                    font-size: 30pt;
-
-
-                  @include breakpoint( $min-page-width-md ) {
-                          @include FuturaStdBold(45pt);
-
-                  }
-
-                  @include breakpoint(  max-width 530px ) {
-                      font-size: 35pt;
-
-                  }
-                  @include breakpoint(  max-width 414px ) {
-                      font-size: 26pt;
-
-                  }
-                  @include breakpoint(  max-width 315px ) {
-                      font-size: 23pt;
-
-                  }
-
-                }
-
-                @include breakpoint( $min-page-width-md ) {
-                    @include FuturaStdBold(38pt);
-
-                }
-            }
-            .description{
-                color: #616160ff;
-                @include FuturaStdMedium(15pt);
-                line-height: 1.2;
-                margin-left: 1%;
-                margin-right: 1%;
-            @include breakpoint( max-width 500px ) {
-                font-size:15px;
-            }
-
-            }
-
-            .slider{
-                margin: 0px auto;
-                    @include breakpoint( $min-page-width-md ) {
-                          max-width: 95% !important;
-                        }
-
-
-                .slick-prev{
-                    left: -20px;
-                    &:before {
-                        color: #000;
-                    }
-                }
-                .slick-next{
-                    &:before {
-                        color: #000;
-                    }
-                }
-                .slick-slide{
-                    img{
-                        display: initial;
-                        height: 100%;
-                        width:100%;
-                        @include breakpoint( $min-page-width-md ) {
-                            height: 250px;
-                            width:100%;
-
-                        }
-                        @include breakpoint( max-width 400px ) {
-                            height: 180px;
-                            width:100%;
-
-                        }
-                    }
-                }
-            }
-            .videos{
-              padding-top:3px;
-                .title{
-                    @include FuturaStdBold(43pt);
-                    color: #439b51ff;
-                    text-align: center;
-                    @include breakpoint( $min-page-width-md ) {
-                        @include FuturaStdBold(34pt);
-                        font-size:25px;
-                    }
-                }
-                .video-item{
-                    height: 260px;
-                    padding-top: 10px;
-                }
-            }
-
-
-            .address-google{
-                .title{
-                    @include FuturaStdBold(43pt);
-                    color: #439b51ff;
-                    @include breakpoint( $min-page-width-md ) {
-                        @include FuturaStdBold(34pt);
-                        font-size:25px;
-                    }
-                }
-                .map{
-                    width: 100%;
-                    height: 280px;
-                    margin: 0px auto;
-                }
-            }
-            .canvasimg{
-                .title{
-                    text-align: center;
-                    @include FuturaStdBold(43pt);
-                    color: #439b51ff;
-                    @include breakpoint( $min-page-width-md ) {
-                        @include FuturaStdBold(34pt);
-                        font-size:25px;
-                    }
-
-
-                }
-                height: 400px;
-                .picture-360{
-                    height: 100%;
-                    width: 100%;
-                    margin: 0px auto;
-                    .image{
-                        height: 100%;
-                        width: 100%;
-                    }
-                }
-            }
-
-            .video-popup{
-                position: absolute;
-                top: 0px;
-                left: 0px;
-                height: 100%;
-                width: 100%;
-                text-align: center;
-                background-color: #000000bf;
-                .reproductor{
-                    margin-top: 5%;
-                    padding-top: 10%;
-                    width: 50%;
-                    margin: 0px auto;
-                    height: 95%;
-                    @include breakpoint( $min-page-width-md ) {
-                        width: 80%;
-                    }
-                }
-            }
-
-            .footer-btns{
-
-                height: 150px;
-                margin-top: 15%;
-                .next{
-                    height: 100%;
-                    background-image: url('../img/next.png');
-                    background-size: contain;
-                    background-repeat: no-repeat;
-                    background-position: right;
-                    cursor: pointer;
-                    &:hover{
-                        background-image: url('../img/next_hover.png');
-                    }
-                }
-
-                .homePage{
-                    height: 50%;
-                    background-image: url('../img/home_chia_naranja.png');
-                    background-size: contain;
-                    background-repeat: no-repeat;
-                    cursor: pointer;
-                    background-position: center;
-
-                    @include breakpoint(max-width 991px ) {
-                        width: 50%;
-                        position:relative;
-                        top:40px;
-
-
-                    }
-                }
-
-                .start{
-                    height: 100%;
-                    background-image: url('../img/home.png');
-                    background-size: contain;
-                    background-repeat: no-repeat;
-                    cursor: pointer;
-                }
-            }
-
+      }
+      .header {
+        background-image: url("../img/header_home.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 250px;
+        background-position-x: 50%;
+        position: relative;
+        top: 32px;
+        @include breakpoint(max-width 360px) {
+          height: 150px;
         }
-
+        @include breakpoint(max-width 590px) {
+          height: 185px;
+        }
+      }
+      .footer {
+        @include breakpoint(max-width 1199px) {
+          position: relative;
+          top: 440px;
+        }
+        @include breakpoint(max-width 991px) {
+          position: relative;
+          top: 0px;
+        }
+        @include breakpoint(max-width 400px) {
+          position: relative;
+          top: 0px;
+        }
+        @include breakpoint(max-width 360px) {
+          height: 50px;
+        }
+        background-image: url("../img/footer_home.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 150px;
+        width: 100%;
+        margin-top: 5%;
+        background-position-x: 50%;
+        box-sizing: border-box;
+      }
+      background-image: url("../img/bg_home.gif");
+      @include backgroundImage();
+      @include breakpoint(max-width 500px) {
+        background-size: 100% 100%;
+      }
+      .category-list {
+        width: 100%;
+        min-height: 500px;
+        .product-list {
+          padding-left: 5%;
+          .product {
+            @include FuturaStdBold(16pt);
+            background-image: url("../img/orng_1.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            height: 260px;
+            width: 260px;
+            text-align: center;
+            padding-top: 27%;
+            margin: 0 auto;
+            color: #fff;
+            position: relative;
+            top: 30px;
+            @include breakpoint(max-width 991px) {
+              padding-top: 40%;
+            }
+            @include breakpoint(max-width 767px) {
+              padding-top: 53%;
+              margin: 0 auto;
+              font-size: 16px;
+            }
+            @include breakpoint(max-width 590px) {
+              height: 200px;
+              width: 200px;
+              padding-top: 38%;
+            }
+            @include breakpoint(max-width 510px) {
+              padding-top: 43%;
+              margin: 0 auto;
+              font-size: 13pt;
+            }
+            @include breakpoint(max-width 400px) {
+              padding-top: 52%;
+              margin: 0 auto;
+              font-size: 10pt;
+              height: 165px;
+              width: 165px;
+            }
+            @include breakpoint(max-width 350px) {
+              padding-top: 58%;
+            }
+            @include breakpoint(max-width 320px) {
+              padding-top: 50%;
+              margin: 0 auto;
+              font-size: 10pt;
+              height: 165px;
+              width: 138px;
+            }
+          }
+        }
+      }
     }
+    .product-container {
+      height: 100%;
+      background-image: url("../img/bg_inter.png");
+      @include backgroundImage();
+      @include breakpoint(max-width 1199px) {
+        min-height: 1776px;
+        background-size: 100% 100%;
+      }
+      @include breakpoint(max-width 991px) {
+        min-height: auto;
+        background-size: 100% 100%;
+      }
+      @include breakpoint(max-width 500px) {
+        height: 100%;
+        background-size: 100% 100%;
+        background-image: none;
+      }
+      .title {
+        @include FuturaStdBold(51pt);
+        color: #439b51ff;
+        .title-product {
+          text-align: right;
+          color: #c0c0c0ff;
+          padding-right: 0%;
+        }
+        @include breakpoint($min-page-width-md) {
+          @include FuturaStdBold(45pt);
+        }
+        @include breakpoint(max-width 500px) {
+          @include FuturaStdBold(40pt);
+          padding-right: 10% !important;
+        }
+        @include breakpoint(max-width 400px) {
+          @include FuturaStdBold(35pt);
+          padding-right: 10% !important;
+        }
+      }
+      .subtitle-product {
+        @include FuturaStdBold(30pt);
+        position: relative;
+        top: -21px;
+        @include breakpoint(max-width 500px) {
+          @include FuturaStdBold(26pt);
+          padding-right: 0% !important;
+          text-align: center;
+        }
+        @include breakpoint(max-width 400px) {
+          @include FuturaStdBold(21pt);
+        }
+      }
+      .categories-list {
+        //padding-left: 10%;
+        @include breakpoint(max-width 400px) {
+          //padding-left: 8%;
+        }
+        @include breakpoint(max-width 350px) {
+          //padding-left: 5%;
+        }
+        .category-item {
+          width: 100%;
+          background-image: url('../img/fondo_categorias.png');
+          background-repeat: no-repeat;
+          background-size: contain;
+          height: 146px;
+          padding-top: 2%;
+          color: #fff !important;
+          font-size: 34pt;
+          font-family: FuturaStdBold;
+          text-align: center;
+          @include breakpoint(max-width 1199px) {
+            height: 120px;
+            font-size: 40px;
+            padding-top: 3%;
+            background-size: contain;
+          }
+          @include breakpoint(max-width 991px) {
+            width: 100%;
+            height: 91px;
+            background-size: contain;
+            padding-top: 2%;
+            color: #fff !important;
+            font-size: 25pt;
+            font-family: FuturaStdBold;
+            text-align: center;
+            margin-bottom: 6px !important;
+          }
+          @include breakpoint(max-width 767px) {
+            height: 70px;
+            font-size: 21px;
+            padding-top: 3%;
+            background-size: contain;
+          }
+          @include breakpoint(max-width 500px) {
+            width: 100%;
+            height: 62px;
+            padding-top: 2%;
+            background-size: contain;
+            color: #fff !important;
+            font-size: 18pt;
+            font-family: FuturaStdBold;
+            text-align: center;
+            margin-bottom: 3px !important;
+          }
+          @include breakpoint(max-width 400px) {
+            height: 50px;
+            font-size: 20px;
+            background-size: contain;
+          }
+          @include breakpoint(max-width 350px) {
+            height: 38px;
+            font-size: 18px;
+            background-size: contain;
+          }
+        }
+        .category-item a {
+          text-align: center;
+          padding-top: 2%;
+          color: #fff !important;
+          font-size: 34pt;
+          font-family: FuturaStdBold;
+          @include breakpoint(max-width 1199px) {
+            font-size: 27pt;
+            position: relative;
+            @include breakpoint(max-width 991px) {
+              font-size: 25pt;
+            }
+            @include breakpoint(max-width 500px) {
+              font-size: 22px;
+              top: -9px;
+            }
+            @include breakpoint(max-width 400px) {
+              font-size: 13pt;
+              top: -12px;
+            }
+            @include breakpoint(max-width 350px) {
+              font-size: 11pt;
+              top: -17px;
+            }
+          }
+        }
+      }
+      .footer-btns {
+        width: 100%;
+        height: 150px;
+        margin-right: 0px;
+        margin-left: 0px;
+        @include breakpoint(max-width 1199px) {
+          width: 100%;
+        }
+        @include breakpoint(max-width 991px) {
+          width: 100%;
+        }
+        @include breakpoint(max-width 500px) {
+          width: 100%;
+          height: 100px;
+        }
+        .next {
+          height: 90%;
+          background-image: url("../img/next.png");
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: right;
+          cursor: pointer;
+        }
+        .homePage {
+          height: 50%;
+          background-image: url("../img/home_chia_naranja.png");
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          cursor: pointer;
+          @include breakpoint(max-width 991px) {
+            height: 50%;
+            position: relative;
+            top: 25px;
+          }
+        }
+        .start {
+          height: 90%;
+          background-image: url("../img/home.png");
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: left;
+          cursor: pointer;
+        }
+      }
+      .banner {
+        height: 70%;
+        .slick-slider {
+          width: 100%;
+          .conten-slide {
+            .my-slide-content {
+              .slider-img {
+                height: auto;
+                width: 100%;
+                margin: 0 auto;
+              }
+            }
+          }
+        }
+        @include breakpoint(max-width 400px) {
+          height: auto;
+          width: 100%;
+        }
+      }
+    }
+    .category-container {
+      height: 100%;
+      padding-left: 0px;
+      background-image: url("../img/bg_inter.png");
+      @include backgroundImage();
+
+      @include breakpoint(max-width 1199px) {
+        min-height: 1776px;
+        background-size: 100% 100%;
+      }
+      @include breakpoint(max-width 991px) {
+        height: auto;
+        background-size: 100% 100%;
+      }
+      @include breakpoint(max-width 500px) {
+        background-size: 100% 100%;
+        background-image: none;
+        min-height: 0;
+      }
+      .title-product {
+        @include FuturaStdBold(64pt);
+        color: #c0c0c0ff;
+        margin-bottom: 0px;
+        @include breakpoint($min-page-width-md) {
+          @include FuturaStdBold(45pt);
+          text-align: right;
+        }
+        @include breakpoint(max-width 500px) {
+          @include FuturaStdBold(36pt);
+          font-size: 45px;
+          padding-right: 30px;
+        }
+        @include breakpoint(max-width 400px) {
+          @include FuturaStdBold(33pt);
+        }
+      }
+      .title-category {
+        @include FuturaStdBold(64pt);
+        color: #439b51ff;
+        margin-top: -30px;
+        @include breakpoint($min-page-width-md) {
+          @include FuturaStdBold(30pt);
+          text-align: center;
+        }
+        @include breakpoint(max-width 500px) {
+          @include FuturaStdBold(36pt);
+          text-align: center;
+          padding-left: 30px;
+          font-size: 24px;
+          padding-top: 15px;
+        }
+        @include breakpoint(max-width 400px) {
+          @include FuturaStdBold(21pt);
+          margin-top: -13px;
+          padding-top: 5px;
+        }
+      }
+      .items-list {
+        margin: 0px auto;
+        .arrow {
+          width: 160px;
+        }
+        br {
+          display: block;
+          @include breakpoint($min-page-width-md) {
+            display: block;
+          }
+        }
+        .item {
+          background-image: url("../img/boton_green.png");
+          background-repeat: no-repeat;
+          background-size: contain;
+          height: 260px;
+          width: 260px;
+          padding-top: 15%;
+          color: #fff;
+          @include FuturaStdBold(18pt);
+          text-align: center;
+          margin-bottom: 5px;
+          margin: 0 auto;
+          a {
+            color: #fff;
+          }
+          @include breakpoint($min-page-width-md) {
+            @include FuturaStdBold(14pt);
+            height: 250px;
+            width: 250px;
+            margin: 0 auto;
+            padding-top: 15%;
+          }
+          @include breakpoint(max-width 500px) {
+            @include FuturaStdBold(12pt);
+            height: 185px;
+            width: 185px;
+            margin: 0 auto;
+            padding-top: 11%;
+          }
+          @include breakpoint(max-width 400px) {
+            @include FuturaStdBold(11pt);
+            height: 150px;
+            width: 150px;
+            margin: 0 auto;
+            padding-top: 12%;
+          }
+        }
+        .category-item {
+          width: 100%;
+          background-image: url("../img/titulos_noticias.png");
+          background-repeat: no-repeat;
+          background-size: cover;
+          height: 146px;
+          padding-top: 2%;
+          color: #fff !important;
+          font-size: 34pt;
+          font-family: FuturaStdBold;
+          text-align: center;
+          @include breakpoint(max-width 1199px) {
+            width: 100%;
+            height: 120px;
+            font-size: 40px;
+            padding-top: 3%;
+            background-size: contain;
+          }
+          @include breakpoint(max-width 991px) {
+            width: 100%;
+            height: 91px;
+            background-size: contain;
+            padding-top: 2%;
+            color: #fff !important;
+            font-size: 25pt;
+            font-family: FuturaStdBold;
+            text-align: center;
+            margin-bottom: 6px !important;
+          }
+          @include breakpoint(max-width 767px) {
+            width: 100%;
+            height: 70px;
+            background-size: contain;
+            font-size: 22px;
+            padding-top: 3%;
+          }
+          @include breakpoint(max-width 500px) {
+            width: 100%;
+            height: 62px;
+            background-size: contain;
+            padding-top: 2%;
+            color: #fff !important;
+            font-size: 18pt;
+            font-family: FuturaStdBold;
+            text-align: center;
+            margin-bottom: 3px !important;
+          }
+          @include breakpoint(max-width 400px) {
+            height: 50px;
+            font-size: 20px;
+            background-size: contain;
+          }
+          @include breakpoint(max-width 350px) {
+            height: 38px;
+
+            font-size: 18px;
+            background-size: contain;
+          }
+        }
+        .category-item a {
+          text-align: center;
+          padding-top: 2%;
+          color: #fff !important;
+          font-size: 34pt;
+          font-family: FuturaStdBold;
+          @include breakpoint(max-width 991px) {
+            font-size: 25pt;
+
+            @include breakpoint(max-width 500px) {
+              font-size: 22px;
+              position: relative;
+              top: -9px;
+            }
+            @include breakpoint(max-width 400px) {
+              font-size: 13pt;
+            }
+            @include breakpoint(max-width 400px) {
+              font-size: 11pt;
+              top: -17px;
+            }
+          }
+        }
+      }
+      .footer-btns {
+        width: 100%;
+        height: 150px;
+        margin-right: 0px;
+        margin-left: 0px;
+        @include breakpoint(max-width 1199px) {
+          width: 100%;
+        }
+        @include breakpoint(max-width 991px) {
+          width: 100%;
+        }
+        @include breakpoint(max-width 500px) {
+          width: 100%;
+          height: 100px;
+        }
+        .next {
+          height: 90%;
+          background-image: url("../img/next.png");
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: right;
+          cursor: pointer;
+        }
+        .homePage {
+          height: 50%;
+          background-image: url("../img/home_chia_naranja.png");
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          cursor: pointer;
+          @include breakpoint(max-width 991px) {
+            height: 50%;
+            position: relative;
+            top: 25px;
+          }
+        }
+        .start {
+          height: 90%;
+          background-image: url("../img/home.png");
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: left;
+          cursor: pointer;
+        }
+      }
+    }
+    .item-container {
+      height: 100%;
+      //min-height: 900px;
+      padding-left: 0px;
+      background-image: url("../img/bg_inter.png");
+      @include backgroundImage();
+      @include breakpoint(max-width 1199px) {
+        //min-height: 1776px;
+        background-size: 100% 100%;
+      }
+      @include breakpoint(max-width 991px) {
+        height: auto;
+        background-size: 100% 100%;
+      }
+      @include breakpoint(max-width 500px) {
+        background-size: 100% 100%;
+        background-image: none;
+        min-height: 0;
+      }
+      .title-header {
+        line-height: 1.1;
+        @include FuturaStdBold(51pt);
+        .item-title {
+          color: #439b51ff;
+          text-align: center;
+          font-size: 30pt;
+          @include breakpoint(max-width 530px) {
+            font-size: 24pt;
+          }
+          @include breakpoint(max-width 414px) {
+            font-size: 20pt;
+          }
+          @include breakpoint(max-width 315px) {
+            font-size: 18pt;
+          }
+        }
+        .category-title {
+          text-align: right;
+          color: #c0c0c0ff;
+          font-size: 30pt;
+          @include breakpoint($min-page-width-md) {
+            @include FuturaStdBold(45pt);
+          }
+          @include breakpoint(max-width 530px) {
+            font-size: 35pt;
+          }
+          @include breakpoint(max-width 414px) {
+            font-size: 26pt;
+          }
+          @include breakpoint(max-width 315px) {
+            font-size: 23pt;
+          }
+        }
+        @include breakpoint($min-page-width-md) {
+          @include FuturaStdBold(38pt);
+        }
+      }
+      .description {
+        color: #616160ff;
+        @include FuturaStdMedium(15pt);
+        line-height: 1.2;
+        margin-left: 1%;
+        margin-right: 1%;
+        @include breakpoint(max-width 500px) {
+          font-size: 15px;
+        }
+      }
+      .slider {
+        margin: 0px auto;
+        @include breakpoint($min-page-width-md) {
+          max-width: 95% !important;
+        }
+        .slick-prev {
+          left: -20px;
+          &:before {
+            color: #000;
+          }
+        }
+        .slick-next {
+          &:before {
+            color: #000;
+          }
+        }
+        .slick-slide {
+          img {
+            display: initial;
+            height: 100%;
+            width: 100%;
+            @include breakpoint($min-page-width-md) {
+              height: 250px;
+              width: 100%;
+            }
+            @include breakpoint(max-width 400px) {
+              height: 180px;
+              width: 100%;
+            }
+          }
+        }
+      }
+      .videos {
+        padding-top: 3px;
+        .title {
+          @include FuturaStdBold(43pt);
+          color: #439b51ff;
+          text-align: center;
+          @include breakpoint($min-page-width-md) {
+            @include FuturaStdBold(34pt);
+            font-size: 25px;
+          }
+        }
+        .video-item {
+          height: 260px;
+          padding-top: 10px;
+        }
+      }
+      .address-google {
+        .title {
+          @include FuturaStdBold(43pt);
+          color: #439b51ff;
+          @include breakpoint($min-page-width-md) {
+            @include FuturaStdBold(34pt);
+            font-size: 25px;
+          }
+        }
+        .map {
+          width: 100%;
+          height: 280px;
+          margin: 0px auto;
+        }
+      }
+      .canvasimg {
+        height: 400px;
+        .title {
+          text-align: center;
+          @include FuturaStdBold(43pt);
+          color: #439b51ff;
+          @include breakpoint($min-page-width-md) {
+            @include FuturaStdBold(34pt);
+            font-size: 25px;
+          }
+        }
+        .picture-360 {
+          height: 90%;
+          width: 100%;
+          margin: 0px auto;
+          .image {
+            height: 100%;
+            width: 100%;
+          }
+        }
+      }
+      .video-popup {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        background-color: #000000bf;
+        .reproductor {
+          margin-top: 5%;
+          padding-top: 10%;
+          width: 50%;
+          margin: 0px auto;
+          height: 95%;
+          @include breakpoint($min-page-width-md) {
+            width: 80%;
+          }
+        }
+      }
+      .footer-btns {
+        width: 100%;
+        height: 150px;
+        margin-right: 0px;
+        margin-left: 0px;
+        @include breakpoint(max-width 1199px) {
+          width: 100%;
+        }
+        @include breakpoint(max-width 991px) {
+          width: 100%;
+        }
+        @include breakpoint(max-width 500px) {
+          width: 100%;
+          height: 100px;
+        }
+        .next {
+          height: 90%;
+          background-image: url("../img/next.png");
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: right;
+          cursor: pointer;
+        }
+        .homePage {
+          height: 50%;
+          background-image: url("../img/home_chia_naranja.png");
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          cursor: pointer;
+          @include breakpoint(max-width 991px) {
+            height: 50%;
+            position: relative;
+            top: 25px;
+          }
+        }
+        .start {
+          height: 90%;
+          background-image: url("../img/home.png");
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: left;
+          cursor: pointer;
+        }
+      }
+    }
+  }
 }
